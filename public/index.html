@@ -4,91 +4,197 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Inovexa Software | IA mudando vidas</title>
+    <meta name="description" content="Inovexa Software: ecossistema de produtos digitais com IA, bem-estar, automação e impacto institucional.">
     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Montserrat:wght@600;700;800&display=swap" rel="stylesheet">
     <script>
         tailwind.config = {
             darkMode: 'class',
             theme: {
                 extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        display: ['Montserrat', 'sans-serif']
+                    },
                     colors: {
                         inovexa: {
-                            dark: '#0B0F19',
-                            card: '#111827',
-                            blue: '#3B82F6',
+                            dark: '#070B14',
+                            deep: '#0B1020',
+                            card: 'rgba(15, 23, 42, 0.72)',
+                            line: 'rgba(148, 163, 184, 0.16)',
+                            blue: '#4F8CFF',
                             accent: '#F59E0B'
                         }
+                    },
+                    boxShadow: {
+                        glow: '0 0 0 1px rgba(79, 140, 255, 0.16), 0 30px 90px rgba(0, 0, 0, 0.55)'
                     }
                 }
             }
         }
     </script>
+    <style>
+        .glass {
+            background: rgba(15, 23, 42, 0.72);
+            backdrop-filter: blur(18px);
+            -webkit-backdrop-filter: blur(18px);
+        }
+    </style>
 </head>
-<body class="bg-inovexa-dark text-gray-300 font-sans antialiased selection:bg-inovexa-blue selection:text-white">
+<body class="bg-inovexa-dark text-slate-300 font-sans antialiased selection:bg-inovexa-blue selection:text-white overflow-x-hidden">
+    <div class="fixed inset-0 -z-10 overflow-hidden">
+        <div class="absolute inset-0 bg-[radial-gradient(circle_at_top,_rgba(79,140,255,0.20),_transparent_40%),radial-gradient(circle_at_80%_20%,_rgba(245,158,11,0.12),_transparent_28%),linear-gradient(180deg,_#070B14_0%,_#0B1020_100%)]"></div>
+        <div class="absolute -top-40 left-1/2 h-96 w-96 -translate-x-1/2 rounded-full bg-blue-500/10 blur-3xl"></div>
+        <div class="absolute bottom-0 right-0 h-[30rem] w-[30rem] rounded-full bg-amber-500/10 blur-3xl"></div>
+    </div>
 
-    <header class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 pb-16 text-center">
-        <div class="flex justify-center mb-8">
-            <img src="./INOVEXA_LOGO_FUNDO TRANSPARENTE_29.04.26.png" alt="Inovexa Software Logo" class="h-24 md:h-32 object-contain">
-        </div>
-        <p class="mt-4 max-w-3xl mx-auto text-xl text-gray-400 leading-relaxed">
-            Construindo o futuro da produtividade e do bem-estar através de aplicações inteligentes. Desenvolvemos soluções robustas que integram Inteligência Artificial, alta performance e design centrado no usuário para resolver desafios do cotidiano.
-        </p>
-    </header>
-
-    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div class="text-center mb-16">
-            <h2 class="text-3xl font-bold text-white tracking-wide uppercase text-sm mb-2 text-inovexa-accent">Portfólio</h2>
-            <h3 class="text-3xl font-extrabold text-white sm:text-4xl">Nosso Ecossistema de Produtos</h3>
-        </div>
-
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-            
-            <div class="bg-inovexa-card rounded-xl p-8 border border-gray-800 shadow-lg hover:border-inovexa-blue transition-colors duration-300">
-                <div class="flex items-center mb-6">
-                    <img src="./logo-antibet_transparente.png" alt="AntiBet Logo" class="h-14 w-auto object-contain">
+    <main id="top" class="relative">
+        <section class="max-w-7xl mx-auto px-6 sm:px-8 lg:px-10 pt-16 sm:pt-24 pb-10 sm:pb-16 text-center">
+            <div class="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-2 text-xs font-semibold uppercase tracking-[0.28em] text-slate-400">
+                Inovexa Software
+            </div>
+            <div class="mt-8 flex justify-center">
+                <img src="./INOVEXA_LOGO_FUNDO TRANSPARENTE_29.04.26.png" alt="Inovexa Software Logo" class="h-28 sm:h-36 md:h-44 w-auto object-contain drop-shadow-[0_20px_50px_rgba(0,0,0,0.55)]">
+            </div>
+            <div class="mt-8 max-w-5xl mx-auto">
+                <h1 class="font-display text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight text-white">
+                    IA, software e design para construir confiança institucional e escala de negócio.
+                </h1>
+                <p class="mt-6 text-lg sm:text-xl leading-8 text-slate-400 max-w-3xl mx-auto">
+                    Um ecossistema premium de produtos digitais que combina posicionamento institucional, experiência de SaaS e impacto real em saúde, automação e produtividade.
+                </p>
+            </div>
+            <div class="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
+                <a href="#produtos" class="inline-flex items-center justify-center rounded-full bg-inovexa-blue px-7 py-3.5 text-sm font-semibold text-white shadow-lg shadow-blue-500/25 transition-transform duration-200 hover:-translate-y-0.5">
+                    Conhecer o ecossistema
+                </a>
+                <a href="#institucional" class="inline-flex items-center justify-center rounded-full border border-white/12 bg-white/5 px-7 py-3.5 text-sm font-semibold text-slate-200 transition-colors duration-200 hover:bg-white/10">
+                    Ver posicionamento institucional
+                </a>
+            </div>
+            <div class="mt-12 grid grid-cols-1 sm:grid-cols-3 gap-3 max-w-4xl mx-auto text-left">
+                <div class="glass rounded-2xl border border-white/10 p-4">
+                    <p class="text-xs uppercase tracking-[0.24em] text-slate-500">Foco</p>
+                    <p class="mt-2 text-sm text-slate-200">Autoridade institucional com percepção premium.</p>
                 </div>
-                <p class="text-gray-400 mb-4 font-medium">Um sistema de prevenção comportamental e um escudo inteligente contra o vício em apostas (ludopatia).</p>
-                <div class="bg-gray-900/50 rounded p-4 border border-gray-800/50">
-                    <p class="text-sm text-gray-400"><strong class="text-gray-300">Destaque Técnico:</strong> Arquitetura escalável baseada em Clean Architecture e DDD, utilizando Flutter no frontend e FastAPI/Python com PostgreSQL e Redis no backend. A Inteligência Artificial (modelos ajustados via RAG) atua como um Coach digital, calculando o Score de Risco Comportamental (SRC) do usuário através de Machine Learning e aplicando técnicas de TCC e Entrevista Motivacional. O sistema inclui ferramentas de contenção de crise, como Botão SOS e Simulador de Oportunidade Perdida.</p>
+                <div class="glass rounded-2xl border border-white/10 p-4">
+                    <p class="text-xs uppercase tracking-[0.24em] text-slate-500">Conversão</p>
+                    <p class="mt-2 text-sm text-slate-200">Estrutura pensada para parceiros e investidores.</p>
+                </div>
+                <div class="glass rounded-2xl border border-white/10 p-4">
+                    <p class="text-xs uppercase tracking-[0.24em] text-slate-500">Portfólio</p>
+                    <p class="mt-2 text-sm text-slate-200">Produtos claros, organizados e visualmente fortes.</p>
                 </div>
             </div>
+        </section>
 
-            <div class="bg-inovexa-card rounded-xl p-8 border border-gray-800 shadow-lg hover:border-inovexa-blue transition-colors duration-300">
-                <div class="flex items-center mb-6">
-                    <img src="./bitlinker-logo-1024.png" alt="BitLinker Logo" class="h-14 w-auto object-contain">
+        <section id="institucional" class="max-w-7xl mx-auto px-6 sm:px-8 lg:px-10 py-10 sm:py-14">
+            <div class="grid gap-6 lg:grid-cols-[1.15fr_0.85fr] items-stretch">
+                <div class="glass rounded-[2rem] border border-white/10 p-8 sm:p-10 shadow-glow">
+                    <p class="text-xs font-semibold uppercase tracking-[0.3em] text-inovexa-accent">Posicionamento</p>
+                    <h2 class="mt-4 font-display text-3xl sm:text-4xl font-bold text-white">
+                        Uma marca pensada para confiança, clareza e visão de futuro.
+                    </h2>
+                    <p class="mt-5 text-base sm:text-lg leading-8 text-slate-400 max-w-2xl">
+                        A Inovexa integra tecnologia, ética e experiência de produto para apresentar um portfólio crível, sofisticado e preparado para relações institucionais de longo prazo.
+                    </p>
                 </div>
-                <p class="text-gray-400 mb-4 font-medium">Uma plataforma desktop profissional focada em automação para afiliados inteligentes, desenvolvida para escalar vendas.</p>
-                <div class="bg-gray-900/50 rounded p-4 border border-gray-800/50">
-                    <p class="text-sm text-gray-400"><strong class="text-gray-300">Destaque Técnico:</strong> Opera com total automação orientada a negócios em múltiplos marketplaces. Utiliza Inteligência Artificial não-emocional para gerenciar interações repetitivas: geração de recomendações de produtos, links afiliados, atendimento e criação de conteúdo completo (textos, imagens e títulos). Focado em alta performance, o utilitário realiza publicações automáticas e organiza vitrines e coleções temáticas.</p>
+                <div class="glass rounded-[2rem] border border-white/10 p-8 sm:p-10">
+                    <p class="text-xs font-semibold uppercase tracking-[0.3em] text-slate-500">Sinais de maturidade</p>
+                    <ul class="mt-5 space-y-4 text-sm sm:text-base text-slate-300">
+                        <li class="flex gap-3"><span class="mt-1 h-2.5 w-2.5 rounded-full bg-inovexa-blue"></span><span>Arquitetura de marca com leitura imediata.</span></li>
+                        <li class="flex gap-3"><span class="mt-1 h-2.5 w-2.5 rounded-full bg-inovexa-blue"></span><span>Experiência visual premium em dark mode.</span></li>
+                        <li class="flex gap-3"><span class="mt-1 h-2.5 w-2.5 rounded-full bg-inovexa-blue"></span><span>Camada clara de produto e oportunidade.</span></li>
+                    </ul>
                 </div>
             </div>
+        </section>
 
-            <div class="bg-inovexa-card rounded-xl p-8 border border-gray-800 shadow-lg hover:border-inovexa-blue transition-colors duration-300">
-                <div class="flex items-center mb-6">
-                    <img src="./logo_clara.png" alt="Clara Logo" class="h-14 w-auto object-contain">
+        <section id="produtos" class="max-w-7xl mx-auto px-6 sm:px-8 lg:px-10 py-10 sm:py-16">
+            <div class="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between mb-10">
+                <div>
+                    <p class="text-xs font-semibold uppercase tracking-[0.3em] text-inovexa-accent">Ecossistema</p>
+                    <h2 class="mt-3 font-display text-3xl sm:text-4xl font-bold text-white">Produtos com narrativa clara e posicionamento sólido</h2>
                 </div>
-                <p class="text-gray-400 mb-4 font-medium">Um aplicativo de bem-estar emocional focado em oferecer uma escuta empática, acolhedora e respeitosa, atuando como uma amiga virtual.</p>
-                <div class="bg-gray-900/50 rounded p-4 border border-gray-800/50">
-                    <p class="text-sm text-gray-400"><strong class="text-gray-300">Destaque Técnico:</strong> Movida por processamento de linguagem natural utilizando o modelo Claude Haiku 3.5 via Amazon Bedrock. A Clara possui memória contextual estruturada (lembrando de interações passadas) e adapta sua linguagem dinamicamente com base na idade, sexo, emoção e horário do usuário. Sua arquitetura de nuvem é serverless (AWS Lambda + DynamoDB) suportando um aplicativo multiplataforma construído em Flutter.</p>
-                </div>
+                <p class="max-w-2xl text-slate-400 leading-7">
+                    Cada card combina resumo institucional, destaque técnico e hierarquia visual para apoiar leitura rápida e confiança.
+                </p>
             </div>
 
-            <div class="bg-inovexa-card rounded-xl p-8 border border-gray-800 shadow-lg hover:border-inovexa-blue transition-colors duration-300">
-                <div class="flex items-center mb-6">
-                    <img src="./nutrifacil_fundo_transparente.png" alt="NutriFácil Logo" class="h-14 w-auto object-contain">
+            <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
+                <article class="glass rounded-[2rem] border border-white/10 p-7 sm:p-8 shadow-glow transition-transform duration-300 hover:-translate-y-1">
+                    <div class="flex items-center justify-between gap-4 mb-6">
+                        <img src="./logo-antibet_transparente.png" alt="AntiBet Logo" class="h-16 w-auto object-contain">
+                        <span class="rounded-full border border-blue-400/20 bg-blue-400/10 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.24em] text-blue-200">Saúde digital</span>
+                    </div>
+                    <h3 class="text-2xl font-display font-bold text-white">AntiBet</h3>
+                    <p class="mt-3 text-slate-400 leading-7">
+                        Sistema de prevenção comportamental e escudo inteligente contra o vício em apostas.
+                    </p>
+                    <div class="mt-6 rounded-2xl border border-white/8 bg-black/20 p-5">
+                        <p class="text-sm leading-7 text-slate-400">
+                            <strong class="text-slate-200">Destaque Técnico:</strong> Clean Architecture, DDD, Flutter, FastAPI/Python, PostgreSQL, Redis e IA orientada a risco comportamental.
+                        </p>
+                    </div>
+                </article>
+
+                <article class="glass rounded-[2rem] border border-white/10 p-7 sm:p-8 shadow-glow transition-transform duration-300 hover:-translate-y-1">
+                    <div class="flex items-center justify-between gap-4 mb-6">
+                        <img src="./bitlinker-logo-1024.png" alt="BitLinker Logo" class="h-16 w-auto object-contain">
+                        <span class="rounded-full border border-emerald-400/20 bg-emerald-400/10 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.24em] text-emerald-200">Automação</span>
+                    </div>
+                    <h3 class="text-2xl font-display font-bold text-white">BitLinker</h3>
+                    <p class="mt-3 text-slate-400 leading-7">
+                        Plataforma desktop para automação de afiliados inteligentes e escala comercial.
+                    </p>
+                    <div class="mt-6 rounded-2xl border border-white/8 bg-black/20 p-5">
+                        <p class="text-sm leading-7 text-slate-400">
+                            <strong class="text-slate-200">Destaque Técnico:</strong> geração de conteúdo, recomendações, atendimento e publicações automatizadas com foco em performance.
+                        </p>
+                    </div>
+                </article>
+
+                <article class="glass rounded-[2rem] border border-white/10 p-7 sm:p-8 shadow-glow transition-transform duration-300 hover:-translate-y-1 md:col-span-2 xl:col-span-1">
+                    <div class="flex items-center justify-between gap-4 mb-6">
+                        <img src="./logo_clara.png" alt="Clara Logo" class="h-16 w-auto object-contain">
+                        <span class="rounded-full border border-amber-400/20 bg-amber-400/10 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.24em] text-amber-200">Bem-estar</span>
+                    </div>
+                    <h3 class="text-2xl font-display font-bold text-white">Clara</h3>
+                    <p class="mt-3 text-slate-400 leading-7">
+                        Aplicativo emocional com escuta empática e presença acolhedora.
+                    </p>
+                    <div class="mt-6 rounded-2xl border border-white/8 bg-black/20 p-5">
+                        <p class="text-sm leading-7 text-slate-400">
+                            <strong class="text-slate-200">Destaque Técnico:</strong> Claude Haiku 3.5 via Amazon Bedrock, memória contextual e arquitetura serverless com Flutter.
+                        </p>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <section class="max-w-7xl mx-auto px-6 sm:px-8 lg:px-10 py-12 sm:py-16">
+            <div class="glass rounded-[2rem] border border-white/10 p-8 sm:p-10 flex flex-col lg:flex-row lg:items-center lg:justify-between gap-8">
+                <div>
+                    <p class="text-xs font-semibold uppercase tracking-[0.3em] text-slate-500">Próximo passo</p>
+                    <h2 class="mt-3 font-display text-3xl font-bold text-white">Pronto para reforçar a presença institucional da Inovexa.</h2>
                 </div>
-                <p class="text-gray-400 mb-4 font-medium">Um aplicativo educativo e de apoio nutricional focado em ajudar famílias a reduzirem más escolhas de forma simples e acessível.</p>
-                <div class="bg-gray-900/50 rounded p-4 border border-gray-800/50">
-                    <p class="text-sm text-gray-400"><strong class="text-gray-300">Destaque Técnico:</strong> O núcleo utiliza um motor de regras de baixo custo para o scanner de código de barras (classificação nutricional em semáforo). A IA opera sob forte governança de custos e traz como grande inovação a análise visual de alimentos frescos por foto. Utilizando modelos de Visão Computacional (EfficientNetB0/MobileNetV2), o app classifica o estado de conservação de vegetais em quatro níveis de maturação.</p>
+                <div class="flex flex-col sm:flex-row gap-4">
+                    <a href="#top" class="inline-flex items-center justify-center rounded-full bg-white px-6 py-3 text-sm font-semibold text-slate-950 transition-transform duration-200 hover:-translate-y-0.5">
+                        Voltar ao topo
+                    </a>
+                    <a href="#produtos" class="inline-flex items-center justify-center rounded-full border border-white/12 bg-white/5 px-6 py-3 text-sm font-semibold text-slate-200 transition-colors duration-200 hover:bg-white/10">
+                        Revisar portfólio
+                    </a>
                 </div>
             </div>
+        </section>
 
-        </div>
+        <footer class="border-t border-white/10 py-8 text-center">
+            <p class="text-slate-400 font-medium">© 2026 Inovexa Software. IA Mudando Vidas.</p>
+            <p class="text-sm text-slate-500 mt-2">Tecnologia, ética e inovação no desenvolvimento de software e IA.</p>
+        </footer>
     </main>
-
-    <footer class="border-t border-gray-800 mt-16 py-8 text-center">
-        <p class="text-gray-500 font-medium">© 2026 Inovexa Software. IA Mudando Vidas.</p>
-        <p class="text-sm text-gray-600 mt-2">Tecnologia, ética e inovação no desenvolvimento de software e IA.</p>
-    </footer>
-
 </body>
 </html>
