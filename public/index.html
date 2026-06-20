@@ -3,8 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Inovexa Software | IA mudando vidas</title>
-    <meta name="description" content="Inovexa Software: ecossistema de produtos digitais com IA, bem-estar, automação e impacto institucional.">
+    <title>Inovexa Software | www.inovexa.software</title>
+    <meta name="description" content="Inovexa Software: aplicativos com IA para resolver necessidades reais.">
+    <link rel="canonical" href="https://www.inovexa.software/">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Inovexa Software | www.inovexa.software">
+    <meta property="og:description" content="Aplicativos com IA para resolver necessidades reais.">
+    <meta property="og:url" content="https://www.inovexa.software/">
+    <meta property="og:site_name" content="Inovexa Software">
+    <meta property="og:image" content="https://www.inovexa.software/logo_inovexa_3d_brilhante_transparent_cropped.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="preload" as="image" href="./logo-antibet_transparente_cropped.png">
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -20,8 +29,8 @@
                     },
                     colors: {
                         inovexa: {
-                            dark: '#070B14',
-                            deep: '#0B1020',
+                            dark: '#0B1220',
+                            deep: '#13213A',
                             card: 'rgba(15, 23, 42, 0.72)',
                             line: 'rgba(148, 163, 184, 0.16)',
                             blue: '#4F8CFF',
@@ -41,29 +50,155 @@
             backdrop-filter: blur(18px);
             -webkit-backdrop-filter: blur(18px);
         }
+        .card-copy {
+            color: rgb(148 163 184);
+            font-size: 15px;
+            line-height: 1.9;
+            letter-spacing: -0.01em;
+        }
+        .card-copy > p + p {
+            margin-top: 1rem;
+        }
+        .card-tech {
+            color: rgb(148 163 184);
+            font-size: 14px;
+            line-height: 1.8;
+        }
+        .product-status {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 9999px;
+            border: 1px solid rgba(148, 163, 184, 0.16);
+            background: rgba(255, 255, 255, 0.05);
+            padding: 0.45rem 0.8rem;
+            font-size: 11px;
+            font-weight: 700;
+            line-height: 1.2;
+            letter-spacing: 0.22em;
+            text-transform: uppercase;
+        }
+        .product-status--blue {
+            border-color: rgba(96, 165, 250, 0.22);
+            background: rgba(59, 130, 246, 0.10);
+            color: rgb(191 219 254);
+        }
+        .product-status--emerald {
+            border-color: rgba(52, 211, 153, 0.22);
+            background: rgba(16, 185, 129, 0.10);
+            color: rgb(167 243 208);
+        }
+        .product-status--amber {
+            border-color: rgba(245, 158, 11, 0.22);
+            background: rgba(245, 158, 11, 0.10);
+            color: rgb(253 230 138);
+        }
+        .product-status--fuchsia {
+            border-color: rgba(232, 121, 249, 0.22);
+            background: rgba(217, 70, 239, 0.10);
+            color: rgb(240 171 252);
+        }
+        .scan-grid {
+            display: grid;
+            gap: 0.75rem;
+            grid-template-columns: repeat(1, minmax(0, 1fr));
+        }
+        @media (min-width: 640px) {
+            .scan-grid {
+                grid-template-columns: repeat(3, minmax(0, 1fr));
+            }
+        }
+        .scan-item {
+            border-radius: 1rem;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            background: rgba(255, 255, 255, 0.04);
+            padding: 0.9rem;
+        }
+        .scan-label {
+            font-size: 10px;
+            font-weight: 700;
+            letter-spacing: 0.26em;
+            text-transform: uppercase;
+            color: rgb(148 163 184);
+        }
+        .scan-text {
+            margin-top: 0.4rem;
+            font-size: 13px;
+            line-height: 1.6;
+            color: rgb(226 232 240);
+        }
+        .product-cta {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: fit-content;
+            border-radius: 9999px;
+            border: 1px solid rgba(79, 140, 255, 0.28);
+            background: rgba(79, 140, 255, 0.14);
+            padding: 0.8rem 1.15rem;
+            font-size: 14px;
+            font-weight: 700;
+            color: white;
+            box-shadow: 0 12px 30px rgba(79, 140, 255, 0.18);
+            transition: transform 0.2s ease, background-color 0.2s ease, border-color 0.2s ease;
+        }
+        .product-cta:hover {
+            transform: translateY(-1px);
+            background: rgba(79, 140, 255, 0.22);
+            border-color: rgba(96, 165, 250, 0.38);
+        }
+        .product-cta:focus-visible {
+            outline: 2px solid rgba(255, 255, 255, 0.9);
+            outline-offset: 2px;
+        }
+        .footer-trust {
+            display: grid;
+            gap: 1rem;
+        }
+        @media (min-width: 768px) {
+            .footer-trust {
+                grid-template-columns: 1.15fr 0.85fr;
+                align-items: center;
+            }
+        }
+        .footer-links {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 0.75rem 1.25rem;
+        }
+        @media (min-width: 768px) {
+            .footer-links {
+                justify-content: flex-end;
+            }
+        }
+        .footer-links a {
+            color: rgb(148 163 184);
+            transition: color 0.2s ease;
+        }
+        .footer-links a:hover {
+            color: rgb(226 232 240);
+        }
     </style>
 </head>
 <body class="bg-inovexa-dark text-slate-300 font-sans antialiased selection:bg-inovexa-blue selection:text-white overflow-x-hidden">
     <div class="fixed inset-0 -z-10 overflow-hidden">
-        <div class="absolute inset-0 bg-[radial-gradient(circle_at_top,_rgba(79,140,255,0.20),_transparent_40%),radial-gradient(circle_at_80%_20%,_rgba(245,158,11,0.12),_transparent_28%),linear-gradient(180deg,_#070B14_0%,_#0B1020_100%)]"></div>
-        <div class="absolute -top-40 left-1/2 h-96 w-96 -translate-x-1/2 rounded-full bg-blue-500/10 blur-3xl"></div>
-        <div class="absolute bottom-0 right-0 h-[30rem] w-[30rem] rounded-full bg-amber-500/10 blur-3xl"></div>
+        <div class="absolute inset-0 bg-[radial-gradient(circle_at_top,_rgba(79,140,255,0.24),_transparent_34%),radial-gradient(circle_at_80%_20%,_rgba(245,158,11,0.08),_transparent_26%),linear-gradient(180deg,_#243d5f_0%,_#31547a_44%,_#2a4c70_100%)]"></div>
+        <div class="absolute -top-40 left-1/2 h-96 w-96 -translate-x-1/2 rounded-full bg-white/[0.12] blur-3xl"></div>
+        <div class="absolute bottom-0 right-0 h-[30rem] w-[30rem] rounded-full bg-blue-400/18 blur-3xl"></div>
     </div>
 
     <main id="top" class="relative">
         <section class="max-w-7xl mx-auto px-6 sm:px-8 lg:px-10 pt-16 sm:pt-24 pb-10 sm:pb-16 text-center">
-            <div class="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-2 text-xs font-semibold uppercase tracking-[0.28em] text-slate-400">
-                Inovexa Software
-            </div>
             <div class="mt-8 flex justify-center">
-                <img src="./INOVEXA_LOGO_FUNDO TRANSPARENTE_29.04.26.png" alt="Inovexa Software Logo" class="h-28 sm:h-36 md:h-44 w-auto object-contain drop-shadow-[0_20px_50px_rgba(0,0,0,0.55)]">
+                <img src="./logo_inovexa_3d_brilhante_transparent_cropped.png" alt="Inovexa Software Logo" class="w-[min(70vw,40rem)] h-auto object-contain drop-shadow-[0_18px_45px_rgba(15,23,42,0.30)]">
             </div>
-            <div class="mt-8 max-w-5xl mx-auto">
+            <div class="mt-20 sm:mt-24 max-w-5xl mx-auto">
                 <h1 class="font-display text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight text-white">
-                    IA, software e design para construir confiança institucional e escala de negócio.
+                    Aplicativos com IA para resolver necessidades reais.
                 </h1>
-                <p class="mt-6 text-lg sm:text-xl leading-8 text-slate-400 max-w-3xl mx-auto">
-                    Um ecossistema premium de produtos digitais que combina posicionamento institucional, experiência de SaaS e impacto real em saúde, automação e produtividade.
+                <p class="mt-6 text-lg sm:text-xl leading-8 text-slate-200 max-w-3xl mx-auto">
+                    Criamos aplicativos que atendem necessidades reais das pessoas e entregam soluções por meio da tecnologia, com IA no centro da experiência e da produção dos produtos.
                 </p>
             </div>
             <div class="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
@@ -71,21 +206,21 @@
                     Conhecer o ecossistema
                 </a>
                 <a href="#institucional" class="inline-flex items-center justify-center rounded-full border border-white/12 bg-white/5 px-7 py-3.5 text-sm font-semibold text-slate-200 transition-colors duration-200 hover:bg-white/10">
-                    Ver posicionamento institucional
+                    Ver propósito da marca
                 </a>
             </div>
             <div class="mt-12 grid grid-cols-1 sm:grid-cols-3 gap-3 max-w-4xl mx-auto text-left">
                 <div class="glass rounded-2xl border border-white/10 p-4">
                     <p class="text-xs uppercase tracking-[0.24em] text-slate-500">Foco</p>
-                    <p class="mt-2 text-sm text-slate-200">Autoridade institucional com percepção premium.</p>
+                    <p class="mt-2 text-sm text-slate-200">Pessoas, utilidade e valor real no dia a dia.</p>
                 </div>
                 <div class="glass rounded-2xl border border-white/10 p-4">
-                    <p class="text-xs uppercase tracking-[0.24em] text-slate-500">Conversão</p>
-                    <p class="mt-2 text-sm text-slate-200">Estrutura pensada para parceiros e investidores.</p>
+                    <p class="text-xs uppercase tracking-[0.24em] text-slate-500">Experiência</p>
+                    <p class="mt-2 text-sm text-slate-200">Produtos claros, simples e orientados ao uso real.</p>
                 </div>
                 <div class="glass rounded-2xl border border-white/10 p-4">
                     <p class="text-xs uppercase tracking-[0.24em] text-slate-500">Portfólio</p>
-                    <p class="mt-2 text-sm text-slate-200">Produtos claros, organizados e visualmente fortes.</p>
+                    <p class="mt-2 text-sm text-slate-200">IA como peça central em soluções aplicáveis.</p>
                 </div>
             </div>
         </section>
@@ -95,18 +230,18 @@
                 <div class="glass rounded-[2rem] border border-white/10 p-8 sm:p-10 shadow-glow">
                     <p class="text-xs font-semibold uppercase tracking-[0.3em] text-inovexa-accent">Posicionamento</p>
                     <h2 class="mt-4 font-display text-3xl sm:text-4xl font-bold text-white">
-                        Uma marca pensada para confiança, clareza e visão de futuro.
+                        Uma marca pensada para pessoas, clareza e utilidade real.
                     </h2>
                     <p class="mt-5 text-base sm:text-lg leading-8 text-slate-400 max-w-2xl">
-                        A Inovexa integra tecnologia, ética e experiência de produto para apresentar um portfólio crível, sofisticado e preparado para relações institucionais de longo prazo.
+                        A Inovexa integra tecnologia, ética e experiência de produto para criar aplicativos que resolvem necessidades concretas, com inteligência artificial no centro da entrega e da experiência.
                     </p>
                 </div>
                 <div class="glass rounded-[2rem] border border-white/10 p-8 sm:p-10">
                     <p class="text-xs font-semibold uppercase tracking-[0.3em] text-slate-500">Sinais de maturidade</p>
                     <ul class="mt-5 space-y-4 text-sm sm:text-base text-slate-300">
-                        <li class="flex gap-3"><span class="mt-1 h-2.5 w-2.5 rounded-full bg-inovexa-blue"></span><span>Arquitetura de marca com leitura imediata.</span></li>
-                        <li class="flex gap-3"><span class="mt-1 h-2.5 w-2.5 rounded-full bg-inovexa-blue"></span><span>Experiência visual premium em dark mode.</span></li>
-                        <li class="flex gap-3"><span class="mt-1 h-2.5 w-2.5 rounded-full bg-inovexa-blue"></span><span>Camada clara de produto e oportunidade.</span></li>
+                        <li class="flex gap-3"><span class="mt-1 h-2.5 w-2.5 rounded-full bg-inovexa-blue"></span><span>Leitura imediata do propósito da marca.</span></li>
+                        <li class="flex gap-3"><span class="mt-1 h-2.5 w-2.5 rounded-full bg-inovexa-blue"></span><span>Experiência visual premium com contraste melhorado.</span></li>
+                        <li class="flex gap-3"><span class="mt-1 h-2.5 w-2.5 rounded-full bg-inovexa-blue"></span><span>Produtos apresentados com função e utilidade claras.</span></li>
                     </ul>
                 </div>
             </div>
@@ -118,82 +253,222 @@
                     <p class="text-xs font-semibold uppercase tracking-[0.3em] text-inovexa-accent">Ecossistema</p>
                     <h2 class="mt-3 font-display text-3xl sm:text-4xl font-bold text-white">Produtos com narrativa clara e posicionamento sólido</h2>
                 </div>
-                <p class="max-w-2xl text-slate-400 leading-7">
-                    Cada card combina resumo institucional, destaque técnico e hierarquia visual para apoiar leitura rápida e confiança.
-                </p>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
-                <article class="glass rounded-[2rem] border border-white/10 p-7 sm:p-8 shadow-glow transition-transform duration-300 hover:-translate-y-1">
-                    <div class="flex items-center justify-between gap-4 mb-6">
-                        <img src="./logo-antibet_transparente.png" alt="AntiBet Logo" class="h-16 w-auto object-contain">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                <article id="antibet" class="glass h-full rounded-[2rem] border border-white/10 p-7 sm:p-8 shadow-glow transition-transform duration-300 hover:-translate-y-1 flex flex-col">
+                    <div class="flex items-start justify-between gap-4 mb-6">
+                        <div class="grid h-28 w-48 place-items-center overflow-hidden rounded-3xl border border-white/10 bg-white/95 px-4 py-3 sm:h-32 sm:w-56 shadow-[0_18px_40px_rgba(0,0,0,0.18)]">
+                            <img src="./logo-antibet_transparente_cropped.png" alt="AntiBet Logo" loading="eager" decoding="async" fetchpriority="high" class="block h-22 sm:h-26 w-auto max-w-full object-contain object-center mx-auto translate-y-4 sm:translate-y-5">
+                        </div>
                         <span class="rounded-full border border-blue-400/20 bg-blue-400/10 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.24em] text-blue-200">Saúde digital</span>
                     </div>
                     <h3 class="text-2xl font-display font-bold text-white">AntiBet</h3>
-                    <p class="mt-3 text-slate-400 leading-7">
-                        Sistema de prevenção comportamental e escudo inteligente contra o vício em apostas.
+                    <p class="mt-3 text-xs font-semibold uppercase tracking-[0.22em] text-blue-200/90">
+                        O escudo inteligente contra a vontade de apostar
                     </p>
+                    <div class="mt-3">
+                        <span class="product-status product-status--blue">Em preparação para teste fechado</span>
+                    </div>
+                    <div class="mt-4 scan-grid">
+                        <div class="scan-item">
+                            <p class="scan-label">Problema</p>
+                            <p class="scan-text">Impulso de apostar e perda de controle no momento crítico.</p>
+                        </div>
+                        <div class="scan-item">
+                            <p class="scan-label">Como ajuda</p>
+                            <p class="scan-text">Intervenções preventivas, apoio diário e orientação discreta.</p>
+                        </div>
+                        <div class="scan-item">
+                            <p class="scan-label">IA diferencial</p>
+                            <p class="scan-text">Triagens comportamentais, Modo SOS e suporte contextual.</p>
+                        </div>
+                    </div>
+                    <div class="mt-3 card-copy flex-1">
+                        <p>
+                        O AntiBet surge como uma resposta tecnológica rigorosa e humana à epidemia silenciosa da ludopatia. Projetado para atuar como um farol preventivo e de apoio diário, o aplicativo apresenta-se como um mentor digital sigiloso e não julgador.
+                        </p>
+                        <p>
+                        Sua mecânica de funcionamento combina triagens comportamentais automatizadas com ferramentas de intervenção imediata para desarmar o impulso no momento exato em que ele ocorre, devolvendo ao usuário a clareza, a saúde financeira e o controle de sua própria vida.
+                        </p>
+                        <p>
+                        Construído sob os princípios científicos da Terapia Cognitivo-Comportamental (TCC) e da Entrevista Motivacional, o sistema traz recursos disruptivos como o Modo SOS, o Simulador de Oportunidade Perdida e um Módulo Educacional focado na matemática das apostas.
+                        </p>
+                    </div>
+                    <div class="mt-5 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+                        <a href="#antibet" class="product-cta">Conhecer o AntiBet</a>
+                        <p class="max-w-xl text-sm leading-6 text-slate-300/90">O AntiBet é uma ferramenta de apoio e prevenção. Não substitui profissionais de saúde.</p>
+                    </div>
                     <div class="mt-6 rounded-2xl border border-white/8 bg-black/20 p-5">
-                        <p class="text-sm leading-7 text-slate-400">
-                            <strong class="text-slate-200">Destaque Técnico:</strong> Clean Architecture, DDD, Flutter, FastAPI/Python, PostgreSQL, Redis e IA orientada a risco comportamental.
+                        <p class="card-tech">
+                            <strong class="text-slate-200">Destaque Técnico:</strong> Flutter UI Midnight Premium (Glassmorphism), Backend FastAPI com Python 3.12, Cache de Prompts com Redis, Google Cloud Speech-to-Text (STT) e Text-to-Speech (TTS), Clean Architecture com DDD.
                         </p>
                     </div>
                 </article>
 
-                <article class="glass rounded-[2rem] border border-white/10 p-7 sm:p-8 shadow-glow transition-transform duration-300 hover:-translate-y-1">
-                    <div class="flex items-center justify-between gap-4 mb-6">
-                        <img src="./bitlinker-logo-1024.png" alt="BitLinker Logo" class="h-16 w-auto object-contain">
+                <article id="bitlinker" class="glass h-full rounded-[2rem] border border-white/10 p-7 sm:p-8 shadow-glow transition-transform duration-300 hover:-translate-y-1 flex flex-col">
+                    <div class="flex items-start justify-between gap-4 mb-6">
+                        <div class="grid h-28 w-48 place-items-center overflow-hidden rounded-3xl border border-white/10 bg-white/95 px-4 py-3 sm:h-32 sm:w-56 shadow-[0_18px_40px_rgba(0,0,0,0.18)]">
+                            <img src="./bitlinker-logo-1024.png" alt="BitLinker Logo" class="block h-40 sm:h-[11.5rem] w-auto max-w-full object-contain object-center mx-auto -translate-y-8 sm:-translate-y-9 translate-x-1 sm:translate-x-2">
+                        </div>
                         <span class="rounded-full border border-emerald-400/20 bg-emerald-400/10 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.24em] text-emerald-200">Automação</span>
                     </div>
                     <h3 class="text-2xl font-display font-bold text-white">BitLinker</h3>
-                    <p class="mt-3 text-slate-400 leading-7">
-                        Plataforma desktop para automação de afiliados inteligentes e escala comercial.
+                    <p class="mt-3 text-xs font-semibold uppercase tracking-[0.22em] text-emerald-200/90">
+                        Automação Inteligente Multimarketplace para Afiliados
                     </p>
+                    <div class="mt-3">
+                        <span class="product-status product-status--emerald">Em arquitetura</span>
+                    </div>
+                    <div class="mt-4 scan-grid">
+                        <div class="scan-item">
+                            <p class="scan-label">Problema</p>
+                            <p class="scan-text">Rotina manual e dispersão nas campanhas de afiliados.</p>
+                        </div>
+                        <div class="scan-item">
+                            <p class="scan-label">Como ajuda</p>
+                            <p class="scan-text">Automação de conteúdo, publicação e acompanhamento operacional.</p>
+                        </div>
+                        <div class="scan-item">
+                            <p class="scan-label">IA diferencial</p>
+                            <p class="scan-text">Copys, criativos e decisão assistida com foco em conversão.</p>
+                        </div>
+                    </div>
+                    <div class="mt-3 card-copy flex-1">
+                        <p>
+                        O BitLinker transforma a complexa rotina de operação de afiliados em um ecossistema profissional de altíssimo rendimento, totalmente automatizado e centrado em dados.
+                        </p>
+                        <p>
+                        Projetado sob a premissa de máxima conversão e zero perda de comissão, o software atua como um cockpit de decisão e execução autônoma. Ele varre a web em busca de tendências, cria copys e criativos altamente humanizados com IA e faz a postagem automática em canais e redes sociais, eliminando o trabalho braçal e o amadorismo do processo.
+                        </p>
+                        <p>
+                        Desenvolvido exclusivamente como um sistema desktop de alta performance, o BitLinker garante isolamento total e segurança ao rodar localmente na máquina do operador. Ele implementa motores específicos de inteligência e de validação cirúrgica, integrando-se via APIs oficiais e fluxos técnicos rigorosos para blindar as tags de afiliado contra falhas estruturais ou desvios de tráfego.
+                        </p>
+                    </div>
+                    <div class="mt-5">
+                        <a href="#bitlinker" class="product-cta">Conhecer o BitLinker</a>
+                    </div>
                     <div class="mt-6 rounded-2xl border border-white/8 bg-black/20 p-5">
-                        <p class="text-sm leading-7 text-slate-400">
-                            <strong class="text-slate-200">Destaque Técnico:</strong> geração de conteúdo, recomendações, atendimento e publicações automatizadas com foco em performance.
+                        <p class="card-tech">
+                            <strong class="text-slate-200">Destaque Técnico:</strong> Python 3.12 Backend, FastAPI, SQLite Local (Single Source of Truth), Dockerized Environment para desenvolvimento, IA de Conteúdo com orquestração central de micro-motores.
                         </p>
                     </div>
                 </article>
 
-                <article class="glass rounded-[2rem] border border-white/10 p-7 sm:p-8 shadow-glow transition-transform duration-300 hover:-translate-y-1 md:col-span-2 xl:col-span-1">
-                    <div class="flex items-center justify-between gap-4 mb-6">
-                        <img src="./logo_clara.png" alt="Clara Logo" class="h-16 w-auto object-contain">
+                <article id="clara" class="glass h-full rounded-[2rem] border border-white/10 p-7 sm:p-8 shadow-glow transition-transform duration-300 hover:-translate-y-1 flex flex-col">
+                    <div class="flex items-start justify-between gap-4 mb-6">
+                        <div class="grid h-28 w-44 place-items-center overflow-hidden rounded-3xl border border-white/10 bg-white/95 px-4 py-3 sm:h-32 sm:w-52 shadow-[0_18px_40px_rgba(0,0,0,0.18)]">
+                            <img src="./logo_clara.png" alt="Clara Logo" class="block h-22 sm:h-28 w-auto max-w-full object-contain object-center">
+                        </div>
                         <span class="rounded-full border border-amber-400/20 bg-amber-400/10 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.24em] text-amber-200">Bem-estar</span>
                     </div>
                     <h3 class="text-2xl font-display font-bold text-white">Clara</h3>
-                    <p class="mt-3 text-slate-400 leading-7">
-                        Aplicativo emocional com escuta empática e presença acolhedora.
+                    <p class="mt-3 text-xs font-semibold uppercase tracking-[0.22em] text-amber-200/90">
+                        Inteligência Artificial com Propósito Emocional
                     </p>
+                    <div class="mt-3">
+                        <span class="product-status product-status--amber">Em desenvolvimento</span>
+                    </div>
+                    <div class="mt-4 scan-grid">
+                        <div class="scan-item">
+                            <p class="scan-label">Problema</p>
+                            <p class="scan-text">Solidão, ansiedade e necessidade de suporte diário.</p>
+                        </div>
+                        <div class="scan-item">
+                            <p class="scan-label">Como ajuda</p>
+                            <p class="scan-text">Escuta ativa, chec-ins leves e conversa empática.</p>
+                        </div>
+                        <div class="scan-item">
+                            <p class="scan-label">IA diferencial</p>
+                            <p class="scan-text">Prompts, cache contextual e governança ética de uso.</p>
+                        </div>
+                    </div>
+                    <div class="mt-3 card-copy">
+                        A Clara redefine a fronteira entre tecnologia e suporte afetivo. Desenvolvida sob o pilar de IA humana com impacto social positivo, ela atua como uma amiga digital de suporte contínuo para o equilíbrio diário, solidão, ansiedade e esgotamento emocional.
+                    </div>
+                    <div class="mt-4 card-copy">
+                        Operando de forma voluntária e totalmente anônima, a Clara combina escuta ativa, chec-ins diários de humor e técnicas validadas de psicologia para guiar conversas leves, empáticas e seguras.
+                    </div>
+                    <div class="mt-4 card-copy">
+                        Sua arquitetura robusta de última geração implementa engenharia de prompts avançada combinada a uma Base de Conhecimento Científica Modular e estratégias severas de Prompt Caching. Com uma camada ética inegociável, o sistema monitora sinais de isolamento e bloqueia idealizações românticas por meio de protocolos automatizados em tempo real, sempre estimulando e valorizando o diálogo e os vínculos com pessoas reais.
+                    </div>
+                    <div class="mt-5">
+                        <a href="#clara" class="product-cta">Conhecer a Clara</a>
+                    </div>
                     <div class="mt-6 rounded-2xl border border-white/8 bg-black/20 p-5">
-                        <p class="text-sm leading-7 text-slate-400">
-                            <strong class="text-slate-200">Destaque Técnico:</strong> Claude Haiku 3.5 via Amazon Bedrock, memória contextual e arquitetura serverless com Flutter.
+                        <p class="card-tech">
+                            <strong class="text-slate-200">Destaque Técnico:</strong> Flutter UI (Android/iOS/Web), FastAPI Backend, Amazon Bedrock, Prompt Caching Dinâmico e Clean Architecture com Domain-Driven Design (DDD).
+                        </p>
+                    </div>
+                </article>
+
+                <article id="nutrifacil" class="glass h-full rounded-[2rem] border border-white/10 p-7 sm:p-8 shadow-glow transition-transform duration-300 hover:-translate-y-1 flex flex-col">
+                    <div class="flex items-start justify-between gap-4 mb-6">
+                        <div class="grid h-28 w-44 place-items-center overflow-hidden rounded-3xl border border-white/10 bg-white/95 px-4 py-3 sm:h-32 sm:w-52 shadow-[0_18px_40px_rgba(0,0,0,0.18)]">
+                            <img src="./nutrifacil_fundo_transparente.png" alt="NutriFácil Logo" class="block h-24 sm:h-30 w-auto max-w-full object-contain object-center">
+                        </div>
+                        <span class="rounded-full border border-fuchsia-400/20 bg-fuchsia-400/10 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.24em] text-fuchsia-200">Nutrição</span>
+                    </div>
+                    <h3 class="text-2xl font-display font-bold text-white">NutriFácil</h3>
+                    <p class="mt-3 text-xs font-semibold uppercase tracking-[0.22em] text-fuchsia-200/90">
+                        Apoio Nutricional Prático e Inteligência Familiar
+                    </p>
+                    <div class="mt-3">
+                        <span class="product-status product-status--fuchsia">Protótipo</span>
+                    </div>
+                    <div class="mt-4 scan-grid">
+                        <div class="scan-item">
+                            <p class="scan-label">Problema</p>
+                            <p class="scan-text">Rótulos complexos e escolhas alimentares do dia a dia.</p>
+                        </div>
+                        <div class="scan-item">
+                            <p class="scan-label">Como ajuda</p>
+                            <p class="scan-text">Scanner nutricional e suporte prático à rotina familiar.</p>
+                        </div>
+                        <div class="scan-item">
+                            <p class="scan-label">IA diferencial</p>
+                            <p class="scan-text">Visão computacional e receitas guiadas pelos ingredientes.</p>
+                        </div>
+                    </div>
+                    <div class="mt-3 card-copy flex-1">
+                        <p>
+                        O NutriFácil transforma a relação das famílias com a alimentação diária, tornando as escolhas saudáveis fáceis, transparentes e totalmente mensuráveis. Projetado como um assistente de bem-estar e educação alimentar, o aplicativo elimina a complexidade por trás das tabelas, receitas nutricionais e rótulos industriais.
+                        </p>
+                        <p>
+                        Ao alinhar tecnologia acessível e conscientização, ele atua como um guia de suporte para que pais, adultos e jovens cuidem melhor da rotina alimentar diária, estimulando substituições inteligentes sem a imposição de dietas restritivas ou abordagens clínicas.
+                        </p>
+                        <p>
+                        Sua arquitetura apresenta dois grandes diferenciais de mercado: o Scanner Nutricional Avançado e a inovadora Análise Visual por Câmera. Ainda apresenta um útil módulo de geração de receitas baseadas em imagens da geladeira ou despensa do usuário, para que ele consiga preparar refeições com base nos produtos disponíveis no momento.
+                        </p>
+                    </div>
+                    <div class="mt-5">
+                        <a href="#nutrifacil" class="product-cta">Conhecer o NutriFácil</a>
+                    </div>
+                    <div class="mt-6 rounded-2xl border border-white/8 bg-black/20 p-5">
+                        <p class="card-tech">
+                            <strong class="text-slate-200">Destaque Técnico:</strong> Flutter Framework UI, Backend nativo com arquitetura modular, Modelos de Visão Computacional, Integração de Roteamento Dinâmico de LLM e Camada de Proteção de Infraestrutura AIUsageGuard.
                         </p>
                     </div>
                 </article>
             </div>
         </section>
 
-        <section class="max-w-7xl mx-auto px-6 sm:px-8 lg:px-10 py-12 sm:py-16">
-            <div class="glass rounded-[2rem] border border-white/10 p-8 sm:p-10 flex flex-col lg:flex-row lg:items-center lg:justify-between gap-8">
+        <footer class="border-t border-white/10 py-8">
+            <div class="max-w-7xl mx-auto px-6 sm:px-8 lg:px-10 footer-trust text-center">
                 <div>
-                    <p class="text-xs font-semibold uppercase tracking-[0.3em] text-slate-500">Próximo passo</p>
-                    <h2 class="mt-3 font-display text-3xl font-bold text-white">Pronto para reforçar a presença institucional da Inovexa.</h2>
+                    <p class="text-lg font-display font-bold text-white">Inovexa Software</p>
+                    <p class="mt-2 text-sm sm:text-base text-slate-300">Produtos digitais com IA, ética e utilidade real.</p>
+                    <p class="mt-3 text-sm text-slate-500">Contato: contato@inovexa.software</p>
                 </div>
-                <div class="flex flex-col sm:flex-row gap-4">
-                    <a href="#top" class="inline-flex items-center justify-center rounded-full bg-white px-6 py-3 text-sm font-semibold text-slate-950 transition-transform duration-200 hover:-translate-y-0.5">
-                        Voltar ao topo
-                    </a>
-                    <a href="#produtos" class="inline-flex items-center justify-center rounded-full border border-white/12 bg-white/5 px-6 py-3 text-sm font-semibold text-slate-200 transition-colors duration-200 hover:bg-white/10">
-                        Revisar portfólio
-                    </a>
+                <div class="space-y-3">
+                    <div class="footer-links text-sm">
+                        <a href="#">Política de Privacidade</a>
+                        <a href="#">Termos de Uso</a>
+                        <a href="https://www.inovexa.software/">www.inovexa.software</a>
+                    </div>
+                    <p class="text-sm text-slate-500">© 2026 Inovexa Software. IA Mudando Vidas.</p>
                 </div>
             </div>
-        </section>
-
-        <footer class="border-t border-white/10 py-8 text-center">
-            <p class="text-slate-400 font-medium">© 2026 Inovexa Software. IA Mudando Vidas.</p>
-            <p class="text-sm text-slate-500 mt-2">Tecnologia, ética e inovação no desenvolvimento de software e IA.</p>
         </footer>
     </main>
 </body>
