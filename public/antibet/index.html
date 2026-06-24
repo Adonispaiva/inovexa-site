@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AntiBet — Copa sem aposta | Apoio para resistir ao impulso de apostar</title>
+    <meta name="description" content="AntiBet é um aplicativo da Inovexa Software para apoio preventivo, autocontrole e pausa de segurança contra o impulso de apostar. Pré-lançamento Android.">
+    <link rel="canonical" href="https://www.inovexa.software/antibet/">
+    <meta property="og:title" content="AntiBet — Copa sem aposta">
+    <meta property="og:description" content="Apoio digital, anônimo e preventivo para pausar antes do impulso de apostar.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.inovexa.software/antibet/">
+    <meta property="og:site_name" content="Inovexa Software">
+    <meta property="og:image" content="https://www.inovexa.software/logo-antibet_transparente_cropped.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="theme-color" content="#0f2d24">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Montserrat:wght@600;700;800&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        display: ['Montserrat', 'sans-serif']
+                    },
+                    colors: {
+                        antibet: {
+                            bg: '#071411',
+                            panel: 'rgba(9, 25, 20, 0.76)',
+                            mint: '#48D7B5',
+                            mintSoft: '#BFF4E5',
+                            green: '#1F8A5B',
+                            line: 'rgba(191, 244, 229, 0.12)'
+                        }
+                    },
+                    boxShadow: {
+                        glow: '0 0 0 1px rgba(72, 215, 181, 0.16), 0 30px 90px rgba(0, 0, 0, 0.55)'
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+        body {
+            background:
+                radial-gradient(circle at top left, rgba(72, 215, 181, 0.16), transparent 32%),
+                radial-gradient(circle at top right, rgba(31, 138, 91, 0.18), transparent 28%),
+                linear-gradient(180deg, #071411 0%, #091915 45%, #050c0a 100%);
+        }
+        .glass {
+            background: rgba(9, 25, 20, 0.76);
+            backdrop-filter: blur(18px);
+            -webkit-backdrop-filter: blur(18px);
+        }
+        .hero-grid {
+            background-image:
+                linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+            background-size: 30px 30px;
+        }
+        .pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            border-radius: 9999px;
+            border: 1px solid rgba(191, 244, 229, 0.14);
+            background: rgba(255, 255, 255, 0.04);
+            padding: 0.55rem 0.9rem;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 0.22em;
+            text-transform: uppercase;
+        }
+        .primary-cta {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.55rem;
+            border-radius: 9999px;
+            background: linear-gradient(135deg, #18b87c 0%, #0f8f5f 100%);
+            padding: 0.95rem 1.35rem;
+            font-size: 0.95rem;
+            font-weight: 700;
+            color: white;
+            box-shadow: 0 16px 35px rgba(15, 143, 95, 0.28);
+            transition: transform 180ms ease, box-shadow 180ms ease;
+        }
+        .primary-cta:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 20px 40px rgba(15, 143, 95, 0.33);
+        }
+        .secondary-cta {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.55rem;
+            border-radius: 9999px;
+            border: 1px solid rgba(191, 244, 229, 0.18);
+            background: rgba(255, 255, 255, 0.03);
+            padding: 0.95rem 1.35rem;
+            font-size: 0.95rem;
+            font-weight: 700;
+            color: rgb(236 253 245);
+        }
+        .section-title {
+            font-family: Montserrat, sans-serif;
+            letter-spacing: -0.03em;
+        }
+        .card {
+            border: 1px solid rgba(191, 244, 229, 0.12);
+            background: rgba(9, 25, 20, 0.74);
+            box-shadow: 0 24px 60px rgba(0, 0, 0, 0.28);
+        }
+        .fine {
+            color: rgb(209 250 229);
+        }
+        .muted {
+            color: rgb(190 227 215);
+        }
+        .field {
+            width: 100%;
+            border-radius: 1rem;
+            border: 1px solid rgba(191, 244, 229, 0.12);
+            background: rgba(255, 255, 255, 0.04);
+            padding: 0.9rem 1rem;
+            color: white;
+            outline: none;
+        }
+        .field::placeholder {
+            color: rgb(148 163 184);
+        }
+        .field:focus {
+            border-color: rgba(72, 215, 181, 0.5);
+            box-shadow: 0 0 0 3px rgba(72, 215, 181, 0.12);
+        }
+        .antibet-interest-form option {
+            color: #0b1f1a;
+            background: #ffffff;
+        }
+        .logo-shell {
+            border: 1px solid rgba(199, 250, 238, 0.98);
+            background:
+                radial-gradient(circle at 18% 18%, rgba(255, 255, 255, 0.80), transparent 30%),
+                linear-gradient(135deg, rgba(247, 255, 253, 0.99), rgba(223, 252, 244, 0.98));
+            box-shadow:
+                inset 0 1px 0 rgba(255, 255, 255, 0.70),
+                0 10px 22px rgba(17, 76, 60, 0.09),
+                0 0 0 1px rgba(194, 245, 232, 0.18);
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
+        }
+        .logo-shell--hero {
+            background:
+                radial-gradient(circle at 18% 20%, rgba(255, 255, 255, 0.86), transparent 28%),
+                linear-gradient(135deg, rgba(244, 255, 251, 0.99), rgba(218, 251, 241, 0.98));
+        }
+        .logo-img {
+            display: block;
+            width: auto;
+            height: auto;
+            object-fit: contain;
+        }
+        .antibet-header-brand {
+            transform: none;
+        }
+        .antibet-header-badge {
+            max-width: fit-content;
+        }
+        @media (min-width: 1024px) {
+            .antibet-header-brand {
+                transform: translateX(-130px);
+            }
+        }
+        @media (max-width: 480px) {
+            .antibet-header-badge {
+                display: inline-flex;
+                max-width: calc(100vw - 3rem);
+                white-space: normal;
+                text-align: center;
+                line-height: 1.25;
+                letter-spacing: 0.16em;
+                padding-inline: 0.8rem;
+            }
+        }
+        .antibet-hero-logo-mark {
+            position: absolute;
+            left: 50%;
+            top: calc(96% - var(--antibet-hero-logo-lift, 74px));
+            display: block;
+            width: auto;
+            height: auto;
+            object-fit: contain;
+            transform: translateX(-50%) translateY(-50%);
+        }
+        @media (max-width: 640px) {
+            .antibet-hero-logo-mark {
+                top: calc(96% - var(--antibet-hero-logo-lift-mobile, 48px));
+            }
+        }
+    </style>
+</head>
+<body class="font-sans text-slate-100 antialiased overflow-x-hidden">
+    <main class="relative">
+        <header class="sticky top-0 z-30 border-b border-white/5 bg-slate-950/55 backdrop-blur-xl">
+            <div class="mx-auto flex max-w-7xl flex-col gap-3 px-6 py-4 sm:flex-row sm:items-center sm:justify-between sm:px-8 lg:px-10">
+                <a href="/" class="antibet-header-brand flex items-center gap-3 sm:gap-4" aria-label="Inovexa Software">
+                    <div class="logo-shell flex shrink-0 items-center rounded-2xl px-3 py-2">
+                        <img src="/logo_inovexa_3d_brilhante_transparent_cropped.png" alt="Inovexa Software" class="logo-img w-[138px] sm:w-[160px]">
+                    </div>
+                    <span class="sr-only">Inovexa Software</span>
+                </a>
+                <a href="#interesse" class="antibet-header-badge pill w-fit text-emerald-100">Pré-lançamento Android — beta controlado</a>
+            </div>
+        </header>
+
+        <section class="hero-grid">
+            <div class="mx-auto grid max-w-7xl gap-8 px-6 py-14 sm:px-8 sm:py-18 lg:grid-cols-[1.05fr_0.95fr] lg:px-10 lg:py-20">
+                <div class="flex flex-col justify-center">
+                    <div class="mb-6 w-fit max-w-full rounded-[1.6rem] border border-emerald-100/60 bg-[linear-gradient(135deg,rgba(241,255,250,0.92),rgba(221,253,242,0.84))] px-4 py-4 shadow-[0_18px_44px_rgba(9,91,70,0.10)] sm:px-5">
+                        <div class="logo-shell logo-shell--hero mx-auto flex w-fit items-center justify-center rounded-[1.4rem] px-6 py-5 sm:px-7 sm:py-6">
+                            <div class="relative h-[220px] w-[304px] sm:h-[276px] sm:w-[364px] lg:h-[308px] lg:w-[404px]">
+                                <img src="/logo-antibet_transparente_cropped.png" alt="AntiBet" class="logo-img antibet-hero-logo-mark w-[232px] sm:w-[308px] lg:w-[340px]">
+                            </div>
+                        </div>
+                        <div class="mt-4 text-center">
+                            <p class="mt-1 text-sm font-semibold text-slate-900 sm:text-base">Pré-lançamento Android</p>
+                        </div>
+                    </div>
+                    <div class="pill mb-6 w-fit text-emerald-100">
+                        <span class="h-2.5 w-2.5 rounded-full bg-emerald-300"></span>
+                        Pré-lançamento Android
+                    </div>
+                    <h1 class="section-title max-w-4xl text-4xl font-bold leading-[1.02] text-white sm:text-5xl lg:text-6xl">
+                        Copa sem aposta: pause antes do impulso
+                    </h1>
+                    <p class="mt-6 max-w-2xl text-lg leading-8 text-emerald-100/90 sm:text-xl">
+                        O AntiBet ajuda você a criar uma pausa de segurança antes de acessar sites, apps ou conteúdos de apostas.
+                    </p>
+                    <p class="mt-4 max-w-2xl text-base leading-7 text-slate-200/90 sm:text-lg">
+                        Um app discreto, anônimo e preventivo para quem quer reduzir, controlar ou interromper o impulso de apostar.
+                    </p>
+                    <div class="mt-8 flex flex-col gap-3 sm:flex-row">
+                        <a href="#interesse" class="primary-cta">Entrar na lista de espera</a>
+                        <a href="#beta" class="secondary-cta">Quero testar no Android</a>
+                    </div>
+                    <div class="mt-8 grid gap-3 sm:grid-cols-3">
+                        <div class="card rounded-2xl p-4">
+                            <p class="text-xs uppercase tracking-[0.26em] text-emerald-200/70">Status</p>
+                            <p class="mt-2 text-sm font-semibold text-white">Beta controlado</p>
+                        </div>
+                        <div class="card rounded-2xl p-4">
+                            <p class="text-xs uppercase tracking-[0.26em] text-emerald-200/70">Foco</p>
+                            <p class="mt-2 text-sm font-semibold text-white">Pausa preventiva</p>
+                        </div>
+                        <div class="card rounded-2xl p-4">
+                            <p class="text-xs uppercase tracking-[0.26em] text-emerald-200/70">Perfil</p>
+                            <p class="mt-2 text-sm font-semibold text-white">Anônimo e discreto</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="relative">
+                    <div class="absolute inset-0 -z-10 rounded-[2rem] bg-emerald-400/10 blur-3xl"></div>
+                    <div class="card rounded-[2rem] p-6 shadow-glow sm:p-8">
+                        <div class="flex items-start justify-between gap-4">
+                            <div>
+                                <p class="text-xs font-semibold uppercase tracking-[0.3em] text-emerald-200/80">AntiBet</p>
+                                <h2 class="mt-3 section-title text-3xl font-bold text-white">Pausa antes da decisão</h2>
+                            </div>
+                            <span class="pill text-emerald-100">Pré-lançamento Android — beta controlado</span>
+                        </div>
+                        <div class="mt-6 grid gap-4 sm:grid-cols-2">
+                            <div class="rounded-2xl border border-white/8 bg-white/4 p-4">
+                                <p class="text-xs uppercase tracking-[0.26em] text-emerald-200/65">Escudo</p>
+                                <p class="mt-2 text-sm leading-6 text-slate-100">Alertas e bloqueios preventivos para ajudar a interromper o acesso a apps, sites ou conteúdos de apostas.</p>
+                            </div>
+                            <div class="rounded-2xl border border-white/8 bg-white/4 p-4">
+                                <p class="text-xs uppercase tracking-[0.26em] text-emerald-200/65">Calma</p>
+                                <p class="mt-2 text-sm leading-6 text-slate-100">Uma pausa guiada para respirar, reorganizar o impulso e ganhar tempo antes da decisão.</p>
+                            </div>
+                            <div class="rounded-2xl border border-white/8 bg-white/4 p-4">
+                                <p class="text-xs uppercase tracking-[0.26em] text-emerald-200/65">IA</p>
+                                <p class="mt-2 text-sm leading-6 text-slate-100">Conversa de apoio, sem julgamento, com respostas dinâmicas geradas por IA.</p>
+                            </div>
+                            <div class="rounded-2xl border border-white/8 bg-white/4 p-4">
+                                <p class="text-xs uppercase tracking-[0.26em] text-emerald-200/65">Finanças</p>
+                                <p class="mt-2 text-sm leading-6 text-slate-100">Registro simples do valor que você evitou apostar, para visualizar progresso.</p>
+                            </div>
+                        </div>
+                        <div class="mt-4 rounded-2xl border border-emerald-300/15 bg-emerald-300/8 p-4">
+                            <p class="text-sm leading-7 text-emerald-50/95">Modo discreto: experiência privada, anônima e sem exposição.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="mx-auto max-w-7xl px-6 py-8 sm:px-8 lg:px-10">
+            <div class="grid gap-6 lg:grid-cols-[0.88fr_1.12fr]">
+                <div class="card rounded-[2rem] p-7 sm:p-8">
+                    <p class="text-xs font-semibold uppercase tracking-[0.3em] text-emerald-200/75">Por que agora</p>
+                    <h2 class="section-title mt-4 text-3xl font-bold text-white">Eventos esportivos ampliam gatilhos de impulso</h2>
+                    <p class="mt-5 text-base leading-8 text-slate-200/90">
+                        Eventos esportivos de grande porte elevam a exposição a anúncios, grupos, dicas, pressão social e gatilhos de impulso. O objetivo do AntiBet é ajudar a criar um intervalo de segurança antes do clique, sem sensationalismo e sem promessas irreais.
+                    </p>
+                </div>
+                <div class="card rounded-[2rem] p-7 sm:p-8">
+                    <p class="text-xs font-semibold uppercase tracking-[0.3em] text-emerald-200/75">Como o AntiBet ajuda</p>
+                    <div class="mt-5 grid gap-4 sm:grid-cols-2">
+                        <div class="rounded-2xl border border-white/8 bg-white/4 p-5">
+                            <p class="font-semibold text-white">Escudo AntiBet</p>
+                            <p class="mt-2 text-sm leading-6 text-slate-200/90">Alertas e bloqueios preventivos para ajudar a interromper o acesso a apps, sites ou conteúdos de apostas.</p>
+                        </div>
+                        <div class="rounded-2xl border border-white/8 bg-white/4 p-5">
+                            <p class="font-semibold text-white">Momento de Calma</p>
+                            <p class="mt-2 text-sm leading-6 text-slate-200/90">Uma pausa guiada para respirar, reorganizar o impulso e ganhar tempo antes da decisão.</p>
+                        </div>
+                        <div class="rounded-2xl border border-white/8 bg-white/4 p-5">
+                            <p class="font-semibold text-white">Mentor IA</p>
+                            <p class="mt-2 text-sm leading-6 text-slate-200/90">Conversa de apoio, sem julgamento, com respostas dinâmicas geradas por IA.</p>
+                        </div>
+                        <div class="rounded-2xl border border-white/8 bg-white/4 p-5">
+                            <p class="font-semibold text-white">Finanças Preservadas</p>
+                            <p class="mt-2 text-sm leading-6 text-slate-200/90">Registro simples do valor que você evitou apostar, para visualizar progresso.</p>
+                        </div>
+                        <div class="rounded-2xl border border-white/8 bg-white/4 p-5 sm:col-span-2">
+                            <p class="font-semibold text-white">Modo discreto</p>
+                            <p class="mt-2 text-sm leading-6 text-slate-200/90">Experiência privada, anônima e sem exposição.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="mx-auto max-w-7xl px-6 py-8 sm:px-8 lg:px-10">
+            <div class="card rounded-[2rem] p-7 sm:p-8">
+                <p class="text-xs font-semibold uppercase tracking-[0.3em] text-emerald-200/75">Privacidade e ética</p>
+                <div class="mt-5 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+                    <div class="rounded-2xl border border-white/8 bg-white/4 p-4 text-sm text-slate-100">Uso anônimo.</div>
+                    <div class="rounded-2xl border border-white/8 bg-white/4 p-4 text-sm text-slate-100">Seus dados não são vendidos.</div>
+                    <div class="rounded-2xl border border-white/8 bg-white/4 p-4 text-sm text-slate-100">Seus dados não são usados para publicidade.</div>
+                    <div class="rounded-2xl border border-white/8 bg-white/4 p-4 text-sm text-slate-100">Logs e eventos devem ser anonimizados.</div>
+                    <div class="rounded-2xl border border-white/8 bg-white/4 p-4 text-sm text-slate-100 lg:col-span-2">AntiBet é uma ferramenta de apoio e prevenção. Não substitui profissionais de saúde.</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="mx-auto max-w-7xl px-6 pb-8 sm:px-8 lg:px-10">
+            <div class="card rounded-[2rem] p-7 sm:p-8">
+                <p class="text-xs font-semibold uppercase tracking-[0.3em] text-emerald-200/75">Imprensa e contexto</p>
+                <h2 class="section-title mt-4 text-3xl font-bold text-white">Um alerta que não pode ser ignorado</h2>
+                <p class="mt-5 max-w-4xl text-base leading-8 text-slate-200/90">
+                    Reportagem recente do UOL mostrou como o vício em apostas pode permanecer escondido dentro de uma família até se transformar em dívida, isolamento, ansiedade e sofrimento. O AntiBet nasce dessa urgência: criar uma pausa antes do impulso, com apoio discreto, anônimo e sem julgamento.
+                </p>
+                <p class="mt-4 text-sm leading-7 text-slate-300/85">
+                    Referência: <a href="https://noticias.uol.com.br/cotidiano/ultimas-noticias/2026/06/23/nunca-contou-ele-escondia-vicio-em-apostas-e-divida-de-r-15-milhao.ghtm" class="text-emerald-100 underline decoration-emerald-100/40 underline-offset-4" target="_blank" rel="noreferrer noopener">reportagem do UOL sobre os impactos das bets nas famílias</a>.
+                </p>
+            </div>
+        </section>
+
+        <section id="beta" class="mx-auto max-w-7xl px-6 py-8 sm:px-8 lg:px-10">
+            <div class="grid gap-6 lg:grid-cols-[0.92fr_1.08fr]">
+                <div class="card rounded-[2rem] p-7 sm:p-8">
+                    <p class="text-xs font-semibold uppercase tracking-[0.3em] text-emerald-200/75">Teste fechado Android</p>
+                    <h2 class="section-title mt-4 text-3xl font-bold text-white">Validação com convidados</h2>
+                    <p class="mt-5 text-base leading-8 text-slate-200/90">
+                        O AntiBet está em fase de validação com usuários Android convidados. A versão beta será usada para testar instalação, navegação, estabilidade, clareza das telas e utilidade das funções preventivas.
+                    </p>
+                    <p class="mt-4 text-sm font-semibold text-emerald-100">Vagas limitadas para testadores.</p>
+                    <a href="mailto:contato@inovexa.software?subject=Quero%20participar%20do%20beta%20AntiBet" class="primary-cta mt-6 w-fit">Quero participar do beta</a>
+                </div>
+                <div class="card rounded-[2rem] p-7 sm:p-8">
+                    <p class="text-xs font-semibold uppercase tracking-[0.3em] text-emerald-200/75">Parcerias com profissionais e instituições</p>
+                    <h2 class="section-title mt-4 text-3xl font-bold text-white">Apoio com rede e prevenção</h2>
+                    <p class="mt-5 text-base leading-8 text-slate-200/90">
+                        O AntiBet também está sendo preparado para parcerias com psicólogos, clínicas, centros de apoio e iniciativas de prevenção.
+                    </p>
+                    <a href="mailto:contato@inovexa.software?subject=Interesse%20em%20parceria%20AntiBet" class="secondary-cta mt-6 w-fit">Tenho interesse em parceria</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="interesse" class="mx-auto max-w-7xl px-6 py-8 sm:px-8 lg:px-10">
+            <div class="card rounded-[2rem] p-7 sm:p-8">
+                <div class="flex flex-col gap-3 lg:flex-row lg:items-end lg:justify-between">
+                    <div>
+                        <p class="text-xs font-semibold uppercase tracking-[0.3em] text-emerald-200/75">Lista de interesse</p>
+                        <h2 class="section-title mt-4 text-3xl font-bold text-white">Fale com a Inovexa sobre o AntiBet</h2>
+                    </div>
+                    <p class="max-w-2xl text-sm leading-7 text-slate-200/85">Enviaremos as próximas instruções pelo e-mail informado.</p>
+                </div>
+
+                <form id="antibet-interest-form" class="antibet-interest-form mt-7 grid gap-4 lg:grid-cols-2" action="https://formsubmit.co/dfd0cdb97f931a624f73af45aefb25a1" method="POST">
+                    <input type="hidden" name="_subject" value="Novo interessado AntiBet">
+                    <input type="hidden" name="_template" value="table">
+                    <input type="hidden" name="_captcha" value="false">
+                    <input type="hidden" name="_next" value="https://www.inovexa.software/antibet/obrigado/">
+                    <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
+                    <label class="grid gap-2">
+                        <span class="text-sm font-medium text-emerald-100">Nome</span>
+                        <input class="field" type="text" name="name" placeholder="Seu nome" required>
+                    </label>
+                    <label class="grid gap-2">
+                        <span class="text-sm font-medium text-emerald-100">E-mail</span>
+                        <input class="field" type="email" name="email" placeholder="voce@exemplo.com" required>
+                    </label>
+                    <label class="grid gap-2">
+                        <span class="text-sm font-medium text-emerald-100">WhatsApp</span>
+                        <input class="field" type="tel" name="whatsapp" placeholder="(00) 00000-0000">
+                    </label>
+                    <label class="grid gap-2">
+                        <span class="text-sm font-medium text-emerald-100">Sistema operacional</span>
+                        <select class="field" name="os" required>
+                            <option value="" selected disabled>Selecione uma opção</option>
+                            <option value="Android">Android</option>
+                            <option value="iOS">iOS</option>
+                            <option value="Android e iOS">Android e iOS</option>
+                            <option value="Outro">Outro</option>
+                        </select>
+                    </label>
+                    <label class="grid gap-2 lg:col-span-2">
+                        <span class="text-sm font-medium text-emerald-100">Interesse</span>
+                        <select class="field" name="interest" required>
+                            <option value="" selected disabled>Selecione uma opção</option>
+                            <option value="Quero testar o beta Android">Quero testar o beta Android</option>
+                            <option value="Quero receber novidades">Quero receber novidades</option>
+                            <option value="Sou familiar de alguém que precisa de apoio">Sou familiar de alguém que precisa de apoio</option>
+                            <option value="Sou profissional ou clínica parceira">Sou profissional ou clínica parceira</option>
+                            <option value="Quero conversar sobre parceria">Quero conversar sobre parceria</option>
+                        </select>
+                    </label>
+                    <div class="lg:col-span-2 flex flex-col gap-3 sm:flex-row sm:items-center">
+                        <button type="submit" class="primary-cta">Entrar na lista de interesse</button>
+                        <p class="text-sm leading-7 text-slate-200/85">Enviaremos as próximas instruções pelo e-mail informado.</p>
+                    </div>
+                    <p class="lg:col-span-2 text-xs leading-6 text-emerald-100/70">Seus dados serão usados apenas para contato sobre o AntiBet. Não vendemos dados e não temos relação com casas de apostas.</p>
+                </form>
+            </div>
+        </section>
+
+        <footer class="border-t border-white/5 bg-slate-950/40 py-8">
+            <div class="mx-auto grid max-w-7xl gap-6 px-6 sm:px-8 lg:grid-cols-[1fr_auto] lg:items-end lg:px-10">
+                <div>
+                    <p class="text-lg font-display font-bold text-white">Inovexa Software</p>
+                    <p class="mt-1 text-[11px] font-semibold uppercase tracking-[0.28em] text-emerald-200/80">IA mudando vidas</p>
+                    <p class="mt-2 text-sm text-slate-200/90">Aplicativos com IA para resolver necessidades reais.</p>
+                    <p class="mt-3 max-w-3xl text-sm leading-7 text-slate-200/90">AntiBet é uma ferramenta de apoio e prevenção. Não substitui profissionais de saúde.</p>
+                </div>
+                <div class="space-y-3 text-sm">
+                    <a class="block text-emerald-100 underline decoration-emerald-200/35 underline-offset-4" href="https://www.inovexa.software/politica-de-privacidade">Política de Privacidade</a>
+                    <a class="block text-emerald-100 underline decoration-emerald-200/35 underline-offset-4" href="/">Voltar para a Inovexa</a>
+                </div>
+            </div>
+        </footer>
+    </main>
+</body>
+</html>
