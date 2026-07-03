@@ -14,6 +14,12 @@
     <meta property="og:image" content="https://www.inovexa.software/logo-antibet_transparente_cropped.png">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="theme-color" content="#0f2d24">
+    <script>
+        const host = window.location.host.toLowerCase();
+        if (host === 'inovexa-institucional.web.app' || host === 'inovexa-institucional.firebaseapp.com') {
+            window.location.replace('https://www.inovexa.software' + window.location.pathname + window.location.search + window.location.hash);
+        }
+    </script>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -216,7 +222,7 @@
                     </div>
                     <span class="sr-only">Inovexa Software</span>
                 </a>
-                <a href="#interesse" class="antibet-header-badge pill w-fit text-emerald-100">Pré-lançamento Android — beta controlado</a>
+                <a href="#interesse" class="antibet-header-badge pill w-fit text-emerald-100">Em fase de testes — beta controlado</a>
             </div>
         </header>
 
@@ -230,12 +236,12 @@
                             </div>
                         </div>
                         <div class="mt-4 text-center">
-                            <p class="mt-1 text-sm font-semibold text-slate-900 sm:text-base">Pré-lançamento Android</p>
+                            <p class="mt-1 text-sm font-semibold text-slate-900 sm:text-base">Em fase de testes</p>
                         </div>
                     </div>
                     <div class="pill mb-6 w-fit text-emerald-100">
                         <span class="h-2.5 w-2.5 rounded-full bg-emerald-300"></span>
-                        Pré-lançamento Android
+                        Em fase de testes
                     </div>
                     <h1 class="section-title max-w-4xl text-4xl font-bold leading-[1.02] text-white sm:text-5xl lg:text-6xl">
                         Copa sem aposta: pause antes do impulso
@@ -273,7 +279,7 @@
                                 <p class="text-xs font-semibold uppercase tracking-[0.3em] text-emerald-200/80">AntiBet</p>
                                 <h2 class="mt-3 section-title text-3xl font-bold text-white">Pausa antes da decisão</h2>
                             </div>
-                            <span class="pill text-emerald-100">Pré-lançamento Android — beta controlado</span>
+                            <span class="pill text-emerald-100">Em fase de testes — beta controlado</span>
                         </div>
                         <div class="mt-6 grid gap-4 sm:grid-cols-2">
                             <div class="rounded-2xl border border-white/8 bg-white/4 p-4">
@@ -400,7 +406,7 @@
                     <p class="text-xs font-semibold uppercase tracking-[0.3em] text-emerald-200/75">Teste fechado Android</p>
                     <h2 class="section-title mt-4 text-3xl font-bold text-white">Validação com convidados</h2>
                     <p class="mt-5 text-base leading-8 text-slate-200/90">
-                        O AntiBet está em fase de validação com usuários Android convidados. A versão beta será usada para testar instalação, navegação, estabilidade, clareza das telas e utilidade das funções preventivas.
+                        O AntiBet está em fase de testes com usuários Android convidados. A versão beta será usada para validar instalação, navegação, estabilidade, clareza das telas e utilidade das funções preventivas.
                     </p>
                     <p class="mt-4 text-sm font-semibold text-emerald-100">Vagas limitadas para testadores.</p>
                     <a href="mailto:contato@inovexa.software?subject=Quero%20participar%20do%20beta%20AntiBet" class="primary-cta mt-6 w-fit">Quero participar do beta</a>
@@ -478,8 +484,8 @@
             <div class="mx-auto grid max-w-7xl gap-6 px-6 sm:px-8 lg:grid-cols-[1fr_auto] lg:items-end lg:px-10">
                 <div>
                     <p class="text-lg font-display font-bold text-white">Inovexa Software</p>
-                    <p class="mt-1 text-[11px] font-semibold uppercase tracking-[0.28em] text-emerald-200/80">IA mudando vidas</p>
-                    <p class="mt-2 text-sm text-slate-200/90">Aplicativos com IA para resolver necessidades reais.</p>
+                    <p class="mt-1 text-[11px] font-semibold uppercase tracking-[0.28em] text-emerald-200/80">AI-first software para impacto humano.</p>
+                    <p class="mt-2 text-sm text-slate-200/90">AI-first software para impacto humano.</p>
                     <p class="mt-3 max-w-3xl text-sm leading-7 text-slate-200/90">AntiBet é uma ferramenta de apoio e prevenção. Não substitui profissionais de saúde.</p>
                 </div>
                 <div class="space-y-3 text-sm">

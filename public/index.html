@@ -4,16 +4,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Inovexa Software | www.inovexa.software</title>
-    <meta name="description" content="Inovexa Software: aplicativos com IA para resolver necessidades reais.">
+    <meta name="description" content="Inovexa Software: AI-first software para produtos digitais de impacto real.">
     <link rel="canonical" href="https://www.inovexa.software/">
     <meta property="og:type" content="website">
     <meta property="og:title" content="Inovexa Software | www.inovexa.software">
-    <meta property="og:description" content="Aplicativos com IA para resolver necessidades reais.">
+    <meta property="og:description" content="AI-first software para produtos digitais de impacto real.">
     <meta property="og:url" content="https://www.inovexa.software/">
     <meta property="og:site_name" content="Inovexa Software">
     <meta property="og:image" content="https://www.inovexa.software/logo_inovexa_3d_brilhante_transparent_cropped.png">
     <meta name="twitter:card" content="summary_large_image">
+    <script>
+        const host = window.location.host.toLowerCase();
+        if (host === 'inovexa-institucional.web.app' || host === 'inovexa-institucional.firebaseapp.com') {
+            window.location.replace('https://www.inovexa.software' + window.location.pathname + window.location.search + window.location.hash);
+        }
+        if (window.location.hash === '#institucional') {
+            history.replaceState(null, '', window.location.pathname + window.location.search);
+        }
+    </script>
     <link rel="preload" as="image" href="./logo-antibet_transparente_cropped.png">
+    <link rel="preload" as="image" href="./logo_inovexa_3d_brilhante_transparent_cropped.png" fetchpriority="high">
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -179,6 +189,32 @@
         .footer-links a:hover {
             color: rgb(255 255 255);
         }
+        .hero-logo-wrap {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            isolation: isolate;
+            padding-inline: 1rem;
+        }
+        .hero-logo-wrap::before {
+            content: "";
+            position: absolute;
+            left: 50%;
+            top: 54%;
+            width: min(92vw, 58rem);
+            height: min(38vw, 21rem);
+            transform: translate(-50%, -50%);
+            border-radius: 9999px;
+            background: radial-gradient(ellipse at center 40%, rgba(255, 255, 255, 0.96) 0%, rgba(255, 255, 255, 0.74) 16%, rgba(255, 255, 255, 0.28) 34%, rgba(125, 211, 252, 0.14) 60%, rgba(59, 130, 246, 0.04) 82%, transparent 100%);
+            filter: blur(44px);
+            opacity: 0.96;
+            z-index: -1;
+        }
+        .hero-logo-image {
+            position: relative;
+            z-index: 1;
+        }
     </style>
 </head>
 <body class="bg-inovexa-dark text-slate-300 font-sans antialiased selection:bg-inovexa-blue selection:text-white overflow-x-hidden">
@@ -190,24 +226,24 @@
 
     <main id="top" class="relative">
         <section class="max-w-7xl mx-auto px-6 sm:px-8 lg:px-10 pt-16 sm:pt-24 pb-10 sm:pb-16 text-center">
-            <div class="mt-8 flex justify-center">
-                <img src="./logo_inovexa_3d_brilhante_transparent_cropped.png" alt="Inovexa Software Logo" class="w-[min(70vw,40rem)] h-auto object-contain drop-shadow-[0_18px_45px_rgba(15,23,42,0.30)]">
+            <div class="hero-logo-wrap mt-8 flex justify-center">
+                <img src="./logo_inovexa_3d_brilhante_transparent_cropped.png" alt="Inovexa Software Logo" loading="eager" decoding="async" fetchpriority="high" class="hero-logo-image w-[min(70vw,40rem)] h-auto object-contain drop-shadow-[0_18px_45px_rgba(15,23,42,0.30)]">
             </div>
             <div class="mt-20 sm:mt-24 max-w-5xl mx-auto">
                 <h1 class="font-display text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight text-white">
-                    Aplicativos com IA para resolver necessidades reais.
+                    AI-first software para produtos digitais de impacto real.
                 </h1>
                 <p class="mt-6 text-lg sm:text-xl leading-8 text-slate-200 max-w-3xl mx-auto">
-                    Criamos aplicativos que atendem necessidades reais das pessoas e entregam soluções por meio da tecnologia, com IA no centro da experiência e da produção dos produtos.
+                    A Inovexa Software desenvolve aplicações SaaS, plataformas cloud-native e aplicativos mobile com inteligência artificial aplicada a problemas reais, unindo engenharia, segurança, governança técnica e impacto humano positivo.
                 </p>
             </div>
             <div class="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
-                <a href="#produtos" class="inline-flex items-center justify-center rounded-full bg-inovexa-blue px-7 py-3.5 text-sm font-semibold text-white shadow-lg shadow-blue-500/25 transition-transform duration-200 hover:-translate-y-0.5">
-                    Conhecer o ecossistema
+                <a href="mailto:contato@inovexa.software" class="inline-flex items-center justify-center rounded-full bg-inovexa-blue px-7 py-3.5 text-sm font-semibold text-white shadow-lg shadow-blue-500/25 transition-transform duration-200 hover:-translate-y-0.5">
+                    Fale com a Inovexa
                 </a>
-                <a href="#institucional" class="inline-flex items-center justify-center rounded-full border border-white/12 bg-white/5 px-7 py-3.5 text-sm font-semibold text-slate-200 transition-colors duration-200 hover:bg-white/10">
+                <button type="button" onclick="document.querySelector('.institucional-section')?.scrollIntoView({behavior:'smooth'});" class="inline-flex items-center justify-center rounded-full border border-white/12 bg-white/5 px-7 py-3.5 text-sm font-semibold text-slate-200 transition-colors duration-200 hover:bg-white/10">
                     Ver propósito da marca
-                </a>
+                </button>
             </div>
             <div class="mt-12 grid grid-cols-1 sm:grid-cols-3 gap-3 max-w-4xl mx-auto text-left">
                 <div class="glass rounded-2xl border border-white/10 p-4">
@@ -225,7 +261,7 @@
             </div>
         </section>
 
-        <section id="institucional" class="max-w-7xl mx-auto px-6 sm:px-8 lg:px-10 py-10 sm:py-14">
+        <section class="institucional-section max-w-7xl mx-auto px-6 sm:px-8 lg:px-10 py-10 sm:py-14">
             <div class="grid gap-6 lg:grid-cols-[1.15fr_0.85fr] items-stretch">
                 <div class="glass rounded-[2rem] border border-white/10 p-8 sm:p-10 shadow-glow">
                     <p class="text-xs font-semibold uppercase tracking-[0.3em] text-inovexa-accent">Posicionamento</p>
@@ -233,15 +269,24 @@
                         Uma marca pensada para pessoas, clareza e utilidade real.
                     </h2>
                     <p class="mt-5 text-base sm:text-lg leading-8 text-slate-400 max-w-2xl">
-                        A Inovexa integra tecnologia, ética e experiência de produto para criar aplicativos que resolvem necessidades concretas, com inteligência artificial no centro da entrega e da experiência.
+                        A Inovexa integra tecnologia, ética e usabilidade de produto para criar aplicativos que resolvem necessidades concretas, com inteligência artificial no centro da entrega e da experiência.
                     </p>
+                    <div class="mt-6 text-sm sm:text-base leading-7 text-slate-300 max-w-2xl">
+                        <p><strong>Pilares de Atuação:</strong></p>
+                        <ul class="mt-3 space-y-3 list-disc list-inside">
+                            <li><strong>Utilidade Real:</strong> Foco absoluto em resolver problemas cotidianos sem atritos.</li>
+                            <li><strong>Privacidade by Design:</strong> Arquitetura estruturada para garantir segurança e isolamento de dados.</li>
+                            <li><strong>Automação Invisível:</strong> A tecnologia trabalha nos bastidores para simplificar a vida do usuário.</li>
+                        </ul>
+                    </div>
                 </div>
                 <div class="glass rounded-[2rem] border border-white/10 p-8 sm:p-10">
-                    <p class="text-xs font-semibold uppercase tracking-[0.3em] text-slate-500">Sinais de maturidade</p>
+                    <p class="text-xs font-semibold uppercase tracking-[0.3em] text-inovexa-accent">Arquitetura Tecnológica</p>
                     <ul class="mt-5 space-y-4 text-sm sm:text-base text-slate-300">
-                        <li class="flex gap-3"><span class="mt-1 h-2.5 w-2.5 rounded-full bg-inovexa-blue"></span><span>Leitura imediata do propósito da marca.</span></li>
-                        <li class="flex gap-3"><span class="mt-1 h-2.5 w-2.5 rounded-full bg-inovexa-blue"></span><span>Experiência visual premium com contraste melhorado.</span></li>
-                        <li class="flex gap-3"><span class="mt-1 h-2.5 w-2.5 rounded-full bg-inovexa-blue"></span><span>Produtos apresentados com função e utilidade claras.</span></li>
+                        <li class="flex gap-3"><span class="mt-1 h-2.5 w-2.5 rounded-full bg-inovexa-blue"></span><span><strong>Engenharia assistida por IA:</strong> A Inovexa utiliza uma arquitetura interna de engenharia assistida por IA para acelerar a criação, validação e evolução de produtos digitais.</span></li>
+                        <li class="flex gap-3"><span class="mt-1 h-2.5 w-2.5 rounded-full bg-inovexa-blue"></span><span><strong>Backend e infraestrutura:</strong> Nossa base combina backend em Python/FastAPI, aplicações multiplataforma, bancos relacionais, conteinerização, integração com provedores de IA, automação de testes e pipelines de qualidade.</span></li>
+                        <li class="flex gap-3"><span class="mt-1 h-2.5 w-2.5 rounded-full bg-inovexa-blue"></span><span><strong>Segurança e governança:</strong> A estrutura é pensada para rastreabilidade, modularidade, segurança por padrão e evolução contínua.</span></li>
+                        <li class="flex gap-3"><span class="mt-1 h-2.5 w-2.5 rounded-full bg-inovexa-blue"></span><span><strong>Impacto útil:</strong> O trabalho é guiado por clareza técnica, revisão de segurança e foco em produtos que realmente ajudam as pessoas.</span></li>
                     </ul>
                 </div>
             </div>
@@ -268,12 +313,12 @@
                         O escudo inteligente contra a vontade de apostar
                     </p>
                     <div class="mt-3">
-                        <span class="product-status product-status--blue">Pré-lançamento Android — lista de espera aberta</span>
+                        <span class="product-status product-status--blue">Em fase de testes</span>
                     </div>
                     <div class="mt-4 scan-grid">
                         <div class="scan-item">
-                            <p class="scan-label">Problema</p>
-                            <p class="scan-text">Impulso de apostar e perda de controle no momento crítico.</p>
+                            <p class="scan-label">Operação</p>
+                            <p class="scan-text">Arquitetura planejada para alertas, acompanhamento contínuo e painel de métricas.</p>
                         </div>
                         <div class="scan-item">
                             <p class="scan-label">Como ajuda</p>
@@ -289,7 +334,7 @@
                         O AntiBet surge como uma resposta tecnológica rigorosa e humana à epidemia silenciosa da ludopatia. Projetado para atuar como um farol preventivo e de apoio diário, o aplicativo apresenta-se como um mentor digital sigiloso e não julgador.
                         </p>
                         <p>
-                        Sua mecânica de funcionamento combina triagens comportamentais automatizadas com ferramentas de intervenção imediata para desarmar o impulso no momento exato em que ele ocorre, devolvendo ao usuário a clareza, a saúde financeira e o controle de sua própria vida.
+                        Sua mecânica de funcionamento combina triagens comportamentais automatizadas com ferramentas de intervenção imediata para desarmar o impulso no momento exato em que ele ocorre, ajudando o usuário a criar uma pausa, reconhecer riscos e buscar decisões mais seguras.
                         </p>
                         <p>
                         Construído sob os princípios científicos da Terapia Cognitivo-Comportamental (TCC) e da Entrevista Motivacional, o sistema traz recursos disruptivos como o Modo SOS, o Simulador de Oportunidade Perdida e um Módulo Educacional focado na matemática das apostas.
@@ -302,7 +347,7 @@
                         </p>
                     </div>
                     <div class="mt-5 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
-                        <a href="/antibet/" class="product-cta">Conhecer o AntiBet</a>
+                        <span class="inline-flex items-center justify-center rounded-full border border-white/12 bg-white/5 px-7 py-3.5 text-sm font-semibold text-slate-200">Em fase de testes</span>
                         <p class="max-w-xl text-sm leading-6 text-slate-300/90">O AntiBet é uma ferramenta de apoio e prevenção. Não substitui profissionais de saúde.</p>
                     </div>
                     <div class="mt-6 rounded-2xl border border-white/8 bg-black/20 p-5">
@@ -324,7 +369,7 @@
                         Automação Inteligente Multimarketplace para Afiliados
                     </p>
                     <div class="mt-3">
-                        <span class="product-status product-status--emerald">Em arquitetura</span>
+                        <span class="product-status product-status--emerald">Em desenvolvimento avançado</span>
                     </div>
                     <div class="mt-4 scan-grid">
                         <div class="scan-item">
@@ -342,17 +387,17 @@
                     </div>
                     <div class="mt-3 card-copy flex-1">
                         <p>
-                        O BitLinker transforma a complexa rotina de operação de afiliados em um ecossistema profissional de altíssimo rendimento, totalmente automatizado e centrado em dados.
+                        O BitLinker é uma ferramenta desktop de apoio à operação de afiliados, criada para organizar campanhas, padronizar links, apoiar a criação de conteúdo com IA e facilitar o acompanhamento de rotinas de publicação.
                         </p>
                         <p>
-                        Projetado sob a premissa de máxima conversão e zero perda de comissão, o software atua como um cockpit de decisão e execução autônoma. Ele varre a web em busca de tendências, cria copys e criativos altamente humanizados com IA e faz a postagem automática em canais e redes sociais, eliminando o trabalho braçal e o amadorismo do processo.
+                        Seu objetivo é reduzir trabalho manual, aumentar controle operacional e tornar a gestão de campanhas mais clara, rastreável e eficiente, sem prometer resultados financeiros automáticos.
                         </p>
                         <p>
-                        Desenvolvido exclusivamente como um sistema desktop de alta performance, o BitLinker garante isolamento total e segurança ao rodar localmente na máquina do operador. Ele implementa motores específicos de inteligência e de validação cirúrgica, integrando-se via APIs oficiais e fluxos técnicos rigorosos para blindar as tags de afiliado contra falhas estruturais ou desvios de tráfego.
+                        Desenvolvido como um sistema desktop de apoio operacional, o BitLinker prioriza organização, rastreabilidade e segurança ao rodar localmente na máquina do operador, com integração por APIs oficiais e fluxos técnicos claros.
                         </p>
                     </div>
                     <div class="mt-5">
-                        <a href="#bitlinker" class="product-cta">Conhecer o BitLinker</a>
+                        <span class="inline-flex items-center justify-center rounded-full border border-white/12 bg-white/5 px-7 py-3.5 text-sm font-semibold text-slate-200">Em desenvolvimento avançado</span>
                     </div>
                     <div class="mt-6 rounded-2xl border border-white/8 bg-black/20 p-5">
                         <p class="card-tech">
@@ -373,7 +418,7 @@
                         Inteligência Artificial com Propósito Emocional
                     </p>
                     <div class="mt-3">
-                        <span class="product-status product-status--amber">Em desenvolvimento</span>
+                        <span class="product-status product-status--amber">Em fase de testes</span>
                     </div>
                     <div class="mt-4 scan-grid">
                         <div class="scan-item">
@@ -390,16 +435,16 @@
                         </div>
                     </div>
                     <div class="mt-3 card-copy">
-                        A Clara redefine a fronteira entre tecnologia e suporte afetivo. Desenvolvida sob o pilar de IA humana com impacto social positivo, ela atua como uma amiga digital de suporte contínuo para o equilíbrio diário, solidão, ansiedade e esgotamento emocional.
+                        A Clara é uma solução de apoio emocional não clínico, criada para oferecer escuta orientada, chec-ins leves e conversas seguras com apoio de inteligência artificial.
                     </div>
                     <div class="mt-4 card-copy">
-                        Operando de forma voluntária e totalmente anônima, a Clara combina escuta ativa, chec-ins diários de humor e técnicas validadas de psicologia para guiar conversas leves, empáticas e seguras.
+                        Seu objetivo é estimular reflexão, organização emocional e busca por vínculos humanos reais, sempre com limites éticos claros e sem substituir psicólogos, terapeutas ou serviços de emergência.
                     </div>
                     <div class="mt-4 card-copy">
-                        Sua arquitetura robusta de última geração implementa engenharia de prompts avançada combinada a uma Base de Conhecimento Científica Modular e estratégias severas de Prompt Caching. Com uma camada ética inegociável, o sistema monitora sinais de isolamento e bloqueia idealizações românticas por meio de protocolos automatizados em tempo real, sempre estimulando e valorizando o diálogo e os vínculos com pessoas reais.
+                        A Clara não substitui acompanhamento psicológico, atendimento médico ou serviços de emergência.
                     </div>
                     <div class="mt-5">
-                        <a href="#clara" class="product-cta">Conhecer a Clara</a>
+                        <span class="inline-flex items-center justify-center rounded-full border border-white/12 bg-white/5 px-7 py-3.5 text-sm font-semibold text-slate-200">Em fase de testes</span>
                     </div>
                     <div class="mt-6 rounded-2xl border border-white/8 bg-black/20 p-5">
                         <p class="card-tech">
@@ -420,7 +465,7 @@
                         Apoio Nutricional Prático e Inteligência Familiar
                     </p>
                     <div class="mt-3">
-                        <span class="product-status product-status--fuchsia">Protótipo</span>
+                        <span class="product-status product-status--fuchsia">Em fase de testes</span>
                     </div>
                     <div class="mt-4 scan-grid">
                         <div class="scan-item">
@@ -438,17 +483,20 @@
                     </div>
                     <div class="mt-3 card-copy flex-1">
                         <p>
-                        O NutriFácil transforma a relação das famílias com a alimentação diária, tornando as escolhas saudáveis fáceis, transparentes e totalmente mensuráveis. Projetado como um assistente de bem-estar e educação alimentar, o aplicativo elimina a complexidade por trás das tabelas, receitas nutricionais e rótulos industriais.
+                        O NutriFácil transforma a relação das famílias com a alimentação diária, tornando as escolhas saudáveis mais claras e acompanháveis. Projetado como um assistente de bem-estar e educação alimentar, o aplicativo elimina parte da complexidade por trás das tabelas, receitas nutricionais e rótulos industriais.
                         </p>
                         <p>
-                        Ao alinhar tecnologia acessível e conscientização, ele atua como um guia de suporte para que pais, adultos e jovens cuidem melhor da rotina alimentar diária, estimulando substituições inteligentes sem a imposição de dietas restritivas ou abordagens clínicas.
+                        Ao alinhar tecnologia acessível e conscientização, ele atua como um guia de apoio para que pais, adultos e jovens cuidem melhor da rotina alimentar diária, estimulando escolhas mais informadas sem a imposição de dietas restritivas ou abordagens clínicas.
                         </p>
                         <p>
-                        Sua arquitetura apresenta dois grandes diferenciais de mercado: o Scanner Nutricional Avançado e a inovadora Análise Visual por Câmera. Ainda apresenta um útil módulo de geração de receitas baseadas em imagens da geladeira ou despensa do usuário, para que ele consiga preparar refeições com base nos produtos disponíveis no momento.
+                        Sua arquitetura apresenta diferenciais de mercado como o Scanner Nutricional Avançado e a Análise Visual por Câmera, além de um módulo de geração de receitas com base em imagens da geladeira ou despensa do usuário.
+                        </p>
+                        <p class="mt-3 text-sm leading-7 text-slate-300/85">
+                        O NutriFácil é uma ferramenta de educação e apoio alimentar. Não substitui nutricionistas, médicos ou orientação clínica individualizada.
                         </p>
                     </div>
                     <div class="mt-5">
-                        <a href="#nutrifacil" class="product-cta">Conhecer o NutriFácil</a>
+                        <span class="inline-flex items-center justify-center rounded-full border border-white/12 bg-white/5 px-7 py-3.5 text-sm font-semibold text-slate-200">Em fase de testes</span>
                     </div>
                     <div class="mt-6 rounded-2xl border border-white/8 bg-black/20 p-5">
                         <p class="card-tech">
@@ -463,18 +511,14 @@
             <div class="max-w-7xl mx-auto px-6 sm:px-8 lg:px-10 footer-trust text-center">
                 <div>
                     <p class="text-lg font-display font-bold text-white">Inovexa Software</p>
-                    <p class="mt-2 text-sm sm:text-base text-slate-100">Produtos digitais com IA, ética e utilidade real.</p>
-                    <p class="mt-3 text-sm font-semibold text-white">
-                        Contato: <a href="mailto:contato@inovexa.software" class="underline decoration-white/50 underline-offset-4 transition-colors hover:text-white hover:decoration-white">contato@inovexa.software</a>
-                    </p>
+                    <p class="mt-2 text-sm sm:text-base text-slate-100">Contato: <a href="mailto:contato@inovexa.software" class="underline decoration-white/50 underline-offset-4 transition-colors hover:text-white hover:decoration-white">contato@inovexa.software</a></p>
                 </div>
-                <div class="space-y-3">
-                    <div class="footer-links text-sm">
-                        <a href="#">Política de Privacidade</a>
-                        <a href="#">Termos de Uso</a>
-                        <a href="https://www.inovexa.software/">www.inovexa.software</a>
-                    </div>
-                    <p class="text-sm text-slate-100">© 2026 Inovexa Software. IA Mudando Vidas.</p>
+                <div class="footer-links mt-4 flex flex-col items-center gap-3 sm:flex-row sm:justify-center sm:gap-6">
+                    <a href="https://www.linkedin.com/company/inovexa-software/" target="_blank" class="text-sm text-slate-100 underline decoration-white/50 underline-offset-4 transition-colors hover:text-white hover:decoration-white">LinkedIn Corporativo</a>
+                    <a href="https://github.com/inovexa-software/arquitetura-institucional" target="_blank" class="text-sm text-slate-100 underline decoration-white/50 underline-offset-4 transition-colors hover:text-white hover:decoration-white">Engenharia Inovexa (GitHub)</a>
+                </div>
+                <div class="space-y-3 mt-4">
+                    <p class="text-sm text-slate-100">© 2026 Inovexa Software.</p>
                 </div>
             </div>
         </footer>

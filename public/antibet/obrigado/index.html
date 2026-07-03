@@ -13,6 +13,12 @@
     <meta property="og:site_name" content="Inovexa Software">
     <meta property="og:image" content="https://www.inovexa.software/logo-antibet_transparente_cropped.png">
     <meta name="theme-color" content="#0f2d24">
+    <script>
+        const host = window.location.host.toLowerCase();
+        if (host === 'inovexa-institucional.web.app' || host === 'inovexa-institucional.firebaseapp.com') {
+            window.location.replace('https://www.inovexa.software' + window.location.pathname + window.location.search + window.location.hash);
+        }
+    </script>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
