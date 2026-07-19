@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mestre do Reparo | Inovexa</title>
+  <meta name="description" content="Mestre do Reparo transforma o celular em um engenheiro de manutenção com IA, economia mensurável e orientação prática para reparos do dia a dia.">
+  <meta name="keywords" content="repair, ai, maintenance, mestre do reparo, inovexa, manutenção, economia, reparo inteligente">
+  <link rel="canonical" href="https://www.inovexa.software/mestre-do-reparo/">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Mestre do Reparo | Inovexa">
+  <meta property="og:description" content="Transforme seu celular em um Engenheiro de Manutenção. IA para reparos, economia e impacto mensurável.">
+  <meta property="og:url" content="https://www.inovexa.software/mestre-do-reparo/">
+  <meta property="og:site_name" content="Inovexa Software">
+  <meta name="twitter:card" content="summary_large_image">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Montserrat:wght@600;700;800&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+            display: ['Montserrat', 'sans-serif']
+          },
+          colors: {
+            inovexa: {
+              dark: '#08101E',
+              deep: '#12203A',
+              card: 'rgba(10, 18, 34, 0.74)',
+              line: 'rgba(148, 163, 184, 0.18)',
+              blue: '#4F8CFF',
+              amber: '#F7B955',
+              mint: '#41D8A8'
+            }
+          },
+          boxShadow: {
+            glow: '0 0 0 1px rgba(79, 140, 255, 0.18), 0 30px 100px rgba(0, 0, 0, 0.55)'
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    :root { color-scheme: dark; }
+    body {
+      font-family: Inter, sans-serif;
+      background:
+        radial-gradient(circle at 20% 10%, rgba(79, 140, 255, 0.24), transparent 28%),
+        radial-gradient(circle at 80% 20%, rgba(247, 185, 85, 0.12), transparent 26%),
+        linear-gradient(180deg, #08101E 0%, #0C1730 46%, #07111F 100%);
+    }
+    .glass {
+      background: rgba(10, 18, 34, 0.74);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+    }
+    .shine {
+      position: relative;
+      overflow: hidden;
+    }
+    .shine::after {
+      content: "";
+      position: absolute;
+      inset: -40% auto auto -20%;
+      width: 10rem;
+      height: 10rem;
+      background: radial-gradient(circle, rgba(255,255,255,0.18), transparent 72%);
+      filter: blur(8px);
+      pointer-events: none;
+    }
+    .badge {
+      border: 1px solid rgba(255,255,255,0.12);
+      background: rgba(255,255,255,0.04);
+      box-shadow: inset 0 1px 0 rgba(255,255,255,0.06);
+    }
+    .metric {
+      border: 1px solid rgba(148, 163, 184, 0.15);
+      background: rgba(255,255,255,0.03);
+    }
+  </style>
+</head>
+<body class="text-slate-200 antialiased selection:bg-inovexa-blue selection:text-white">
+  <main class="relative overflow-hidden">
+    <div class="absolute inset-0 -z-10">
+      <div class="absolute inset-0 bg-[radial-gradient(circle_at_top,_rgba(79,140,255,0.18),_transparent_32%),radial-gradient(circle_at_80%_20%,_rgba(65,216,168,0.10),_transparent_24%)]"></div>
+      <div class="absolute -top-36 left-1/2 h-96 w-96 -translate-x-1/2 rounded-full bg-white/10 blur-3xl"></div>
+      <div class="absolute bottom-0 right-0 h-[28rem] w-[28rem] rounded-full bg-blue-500/10 blur-3xl"></div>
+    </div>
+
+    <section class="mx-auto max-w-7xl px-6 pb-16 pt-8 sm:px-8 lg:px-10 lg:pb-20">
+      <header class="flex flex-col gap-4 border-b border-white/8 pb-6 sm:flex-row sm:items-center sm:justify-between">
+        <a href="/" class="inline-flex items-center gap-3 text-white">
+          <span class="grid h-12 w-12 place-items-center rounded-2xl border border-white/12 bg-white/5 shadow-lg shadow-blue-500/10">
+            <span class="font-display text-lg font-extrabold tracking-tight text-inovexa-blue">MR</span>
+          </span>
+          <span>
+            <span class="block text-sm uppercase tracking-[0.28em] text-slate-400">Inovexa</span>
+            <span class="block text-lg font-semibold">Mestre do Reparo</span>
+          </span>
+        </a>
+        <div class="flex flex-wrap gap-3">
+          <a href="/mestre-do-reparo/app-store/" class="badge rounded-full px-4 py-2 text-sm font-semibold text-slate-200 transition hover:bg-white/8">App Store</a>
+          <a href="/mestre-do-reparo/play-store/" class="badge rounded-full px-4 py-2 text-sm font-semibold text-slate-200 transition hover:bg-white/8">Play Store</a>
+          <a href="#impacto" class="rounded-full bg-inovexa-blue px-5 py-2.5 text-sm font-semibold text-white shadow-lg shadow-blue-500/20 transition hover:-translate-y-0.5">Baixe Agora</a>
+        </div>
+      </header>
+
+      <div class="grid gap-8 pt-12 lg:grid-cols-[1.08fr_0.92fr] lg:items-center lg:pt-16">
+        <div>
+          <p class="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-2 text-xs font-semibold uppercase tracking-[0.26em] text-slate-300">
+            Repair • AI • Maintenance
+          </p>
+          <h1 class="mt-6 max-w-3xl font-display text-4xl font-extrabold tracking-tight text-white sm:text-5xl lg:text-6xl">
+            Transforme seu celular em um Engenheiro de Manutenção.
+          </h1>
+          <p class="mt-6 max-w-2xl text-lg leading-8 text-slate-300 sm:text-xl">
+            O Mestre do Reparo orienta diagnósticos, prioridades e próximos passos com IA, reduzindo desperdício, acelerando decisões e levando a experiência de manutenção para o bolso do usuário.
+          </p>
+
+          <div class="mt-8 flex flex-col gap-3 sm:flex-row">
+            <a href="#impacto" class="inline-flex items-center justify-center rounded-full bg-inovexa-blue px-6 py-3.5 text-sm font-semibold text-white shadow-lg shadow-blue-500/20 transition hover:-translate-y-0.5">
+              Baixe Agora
+            </a>
+            <a href="/mestre-do-reparo/app-store/" class="inline-flex items-center justify-center rounded-full border border-white/12 bg-white/5 px-6 py-3.5 text-sm font-semibold text-slate-100 transition hover:bg-white/8">
+              Ver App Store
+            </a>
+          </div>
+
+          <div class="mt-10 grid gap-3 sm:grid-cols-3">
+            <div class="metric rounded-2xl p-4">
+              <p class="text-xs uppercase tracking-[0.24em] text-slate-500">Foco</p>
+              <p class="mt-2 text-sm text-slate-200">Reparo claro, guiado e útil no uso real.</p>
+            </div>
+            <div class="metric rounded-2xl p-4">
+              <p class="text-xs uppercase tracking-[0.24em] text-slate-500">Cobertura</p>
+              <p class="mt-2 text-sm text-slate-200">Fridges, faucets e falhas do cotidiano.</p>
+            </div>
+            <div class="metric rounded-2xl p-4">
+              <p class="text-xs uppercase tracking-[0.24em] text-slate-500">SEO</p>
+              <p class="mt-2 text-sm text-slate-200">Repair, AI e maintenance no centro.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="glass shine rounded-[2rem] border border-white/10 p-6 shadow-glow sm:p-8">
+          <div class="rounded-[1.5rem] border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-5">
+            <div class="flex items-start justify-between gap-4">
+              <div>
+                <p class="text-xs font-semibold uppercase tracking-[0.28em] text-slate-400">Adonis Story</p>
+                <h2 class="mt-3 font-display text-2xl font-bold text-white">Uso real, não promessa abstrata.</h2>
+              </div>
+              <span class="rounded-full border border-amber-400/20 bg-amber-400/10 px-3 py-1 text-xs font-semibold text-amber-200">Real Use Case</span>
+            </div>
+            <p class="mt-4 text-sm leading-7 text-slate-300">
+              Em cenários como geladeiras com falha de refrigeração ou torneiras com vazamento, o app organiza o diagnóstico, estima impacto e recomenda a ação mais eficiente antes que o problema se torne custo maior.
+            </p>
+            <div class="mt-6 grid gap-3 sm:grid-cols-2">
+              <div class="rounded-2xl border border-white/8 bg-black/20 p-4">
+                <p class="text-xs uppercase tracking-[0.24em] text-slate-500">Fluxo</p>
+                <p class="mt-2 text-sm text-slate-200">Diagnóstico, priorização e encaminhamento.</p>
+              </div>
+              <div class="rounded-2xl border border-white/8 bg-black/20 p-4">
+                <p class="text-xs uppercase tracking-[0.24em] text-slate-500">Resultado</p>
+                <p class="mt-2 text-sm text-slate-200">Menos desperdício e mais decisão objetiva.</p>
+              </div>
+            </div>
+          </div>
+
+          <div id="impacto" class="mt-5 rounded-[1.5rem] border border-inovexa-blue/20 bg-inovexa-blue/10 p-5">
+            <div class="flex items-center justify-between gap-4">
+              <div>
+                <p class="text-xs font-semibold uppercase tracking-[0.28em] text-slate-300">Inovexa Impact</p>
+                <h3 class="mt-1 text-lg font-semibold text-white">Contador dinâmico pronto para API</h3>
+              </div>
+              <span id="live-indicator" class="rounded-full border border-emerald-400/20 bg-emerald-400/10 px-3 py-1 text-xs font-semibold text-emerald-200">Live</span>
+            </div>
+            <div class="mt-4 grid gap-3 sm:grid-cols-2">
+              <div class="rounded-2xl bg-black/20 p-4">
+                <p class="text-xs uppercase tracking-[0.24em] text-slate-500">Dinheiro Economizado</p>
+                <p class="mt-2 text-3xl font-extrabold text-white"><span data-counter="savings">R$ 12.480</span></p>
+              </div>
+              <div class="rounded-2xl bg-black/20 p-4">
+                <p class="text-xs uppercase tracking-[0.24em] text-slate-500">CO2 Evitado</p>
+                <p class="mt-2 text-3xl font-extrabold text-white"><span data-counter="co2">8.4t</span></p>
+              </div>
+              <div class="rounded-2xl bg-black/20 p-4 sm:col-span-2">
+                <p class="text-xs uppercase tracking-[0.24em] text-slate-500">Consertos Realizados</p>
+                <p class="mt-2 text-3xl font-extrabold text-white"><span data-counter="repairs">0</span></p>
+              </div>
+            </div>
+            <p class="mt-4 text-sm leading-7 text-slate-300">
+              Endpoint preparado em <code class="rounded bg-black/30 px-2 py-1 text-slate-100">/api/v1/stats/impact</code> com fallback automático para a URL pública.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <section class="mt-12 grid gap-6 lg:grid-cols-3">
+        <article class="glass rounded-[1.75rem] border border-white/10 p-6">
+          <p class="text-xs uppercase tracking-[0.28em] text-slate-500">Value Prop</p>
+          <h2 class="mt-3 text-2xl font-bold text-white">Uma interface para decidir rápido.</h2>
+          <p class="mt-4 text-sm leading-7 text-slate-300">Do problema ao próximo passo, a jornada permanece curta, legível e preparada para mobile.</p>
+        </article>
+        <article class="glass rounded-[1.75rem] border border-white/10 p-6">
+          <p class="text-xs uppercase tracking-[0.28em] text-slate-500">Coming Soon</p>
+          <h2 class="mt-3 text-2xl font-bold text-white">Badges de loja já conectados.</h2>
+          <p class="mt-4 text-sm leading-7 text-slate-300">Os atalhos de App Store e Play Store já apontam para artefatos futuros do app.</p>
+        </article>
+        <article class="glass rounded-[1.75rem] border border-white/10 p-6">
+          <p class="text-xs uppercase tracking-[0.28em] text-slate-500">Mobile First</p>
+          <h2 class="mt-3 text-2xl font-bold text-white">Pensado para navegador móvel.</h2>
+          <p class="mt-4 text-sm leading-7 text-slate-300">A hierarquia e os blocos ficam legíveis e acionáveis em telas pequenas.</p>
+        </article>
+      </section>
+    </section>
+  </main>
+  <script>
+    (() => {
+      const API_URLS = [
+        'http://localhost:8000/api/v1/stats/impact',
+        'https://www.inovexa.software/api/v1/stats/impact',
+      ];
+      const fallback = {
+        savings: 'R$ 12.480',
+        repairs: '0',
+        co2: '8.4t',
+      };
+      const storageKey = 'mestre-do-reparo-impact-cache';
+      const elements = {
+        savings: document.querySelector('[data-counter="savings"]'),
+        repairs: document.querySelector('[data-counter="repairs"]'),
+        co2: document.querySelector('[data-counter="co2"]'),
+        live: document.getElementById('live-indicator'),
+      };
+
+      const formatBRL = (value) =>
+        new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL', maximumFractionDigits: 0 }).format(value || 0);
+      const formatKg = (value) =>
+        `${Number(value || 0).toFixed(1).replace('.', ',')}kg`;
+
+      const loadCache = () => {
+        try {
+          return JSON.parse(localStorage.getItem(storageKey) || 'null');
+        } catch {
+          return null;
+        }
+      };
+
+      const saveCache = (data) => {
+        try {
+          localStorage.setItem(storageKey, JSON.stringify(data));
+        } catch {}
+      };
+
+      const setLoading = (loading) => {
+        if (!elements.live) return;
+        elements.live.textContent = loading ? 'Loading' : 'Live';
+        elements.live.className = loading
+          ? 'rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs font-semibold text-slate-200'
+          : 'rounded-full border border-emerald-400/20 bg-emerald-400/10 px-3 py-1 text-xs font-semibold text-emerald-200';
+      };
+
+      const animateValue = (el, from, to, formatter) => {
+        if (!el) return;
+        const start = performance.now();
+        const duration = 800;
+        const tick = (now) => {
+          const progress = Math.min((now - start) / duration, 1);
+          const current = from + (to - from) * (1 - Math.pow(1 - progress, 3));
+          el.textContent = formatter(current);
+          if (progress < 1) requestAnimationFrame(tick);
+        };
+        requestAnimationFrame(tick);
+      };
+
+      const applyStats = (data, animate = true) => {
+        const savings = Number(data.total_saved_brl ?? 0);
+        const repairs = Number(data.total_repairs ?? 0);
+        const co2 = Number(data.co2_avoided_kg ?? 0);
+        const cached = loadCache() || { savings: 12480, repairs: 0, co2: 8.4 };
+        if (!animate) {
+          if (elements.savings) elements.savings.textContent = formatBRL(savings);
+          if (elements.repairs) elements.repairs.textContent = String(repairs);
+          if (elements.co2) elements.co2.textContent = formatKg(co2);
+          return;
+        }
+        animateValue(elements.savings, cached.savings, savings, formatBRL);
+        animateValue(elements.repairs, cached.repairs, repairs, (value) => String(Math.round(value)));
+        animateValue(elements.co2, cached.co2, co2, formatKg);
+        saveCache({ savings, repairs, co2 });
+      };
+
+      const restoreFallback = () => {
+        if (elements.savings) elements.savings.textContent = fallback.savings;
+        if (elements.repairs) elements.repairs.textContent = fallback.repairs;
+        if (elements.co2) elements.co2.textContent = fallback.co2;
+      };
+
+      const fetchStats = async () => {
+        setLoading(true);
+        const cached = loadCache();
+        if (cached) {
+          applyStats({
+            total_saved_brl: cached.savings,
+            total_repairs: cached.repairs,
+            co2_avoided_kg: cached.co2,
+          }, false);
+        }
+
+        for (const url of API_URLS) {
+          try {
+            const response = await fetch(url, {
+              headers: { Accept: 'application/json' },
+              credentials: 'omit',
+            });
+            if (!response.ok) throw new Error(`HTTP ${response.status}`);
+            const payload = await response.json();
+            applyStats(payload, true);
+            setLoading(false);
+            return;
+          } catch (error) {
+            console.warn('Mestre do Reparo stats fetch failed', error);
+          }
+        }
+
+        if (!cached) restoreFallback();
+        setLoading(false);
+      };
+
+      fetchStats();
+    })();
+  </script>
+</body>
+</html>

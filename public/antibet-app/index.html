@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <!--
+    If you are serving your web app in a path other than the root, change the
+    href value below to reflect the base path you are serving from.
+
+    The path provided below has to start and end with a slash "/" in order for
+    it to work correctly.
+
+    For more details:
+    * https://developer.mozilla.org/en-US/docs/Web/HTML/Element/base
+
+    This is a placeholder for base href that will be replaced by the value of
+    the `--base-href` argument provided to `flutter build`.
+  -->
+  <base href="/">
+
+  <meta charset="UTF-8">
+  <meta content="IE=Edge" http-equiv="X-UA-Compatible">
+  <meta name="description" content="AntiBet oficial distribuído aos testadores. Interface web alinhada ao APK de referência.">
+  <meta name="theme-color" content="#0E2142">
+
+  <!-- iOS meta tags & icons -->
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="apple-mobile-web-app-title" content="AntiBet | Inovexa Software">
+  <link rel="apple-touch-icon" href="icons/Icon-192.png">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="favicon.png"/>
+
+  <title>AntiBet | Inovexa Software</title>
+  <link rel="manifest" href="manifest.json">
+  <style>
+    html, body {
+      margin: 0;
+      height: 100%;
+      background: #0E2142;
+      overflow: hidden;
+    }
+    body {
+      display: grid;
+      place-items: center;
+      font-family: Inter, system-ui, sans-serif;
+      color: #e2e8f0;
+    }
+    .startup-shell {
+      display: grid;
+      gap: 16px;
+      justify-items: center;
+      text-align: center;
+      padding: 24px;
+    }
+    .startup-logo {
+      width: 112px;
+      height: 112px;
+      border-radius: 28px;
+      box-shadow: 0 16px 50px rgba(0, 0, 0, 0.28);
+    }
+    .startup-title {
+      font-size: 18px;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+    }
+    .startup-subtitle {
+      font-size: 14px;
+      color: #cbd5e1;
+    }
+    .spinner {
+      width: 28px;
+      height: 28px;
+      border-radius: 9999px;
+      border: 3px solid rgba(255, 255, 255, 0.16);
+      border-top-color: #4F8CFF;
+      animation: spin 0.9s linear infinite;
+    }
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+    flutter-view {
+      background: #0E2142 !important;
+    }
+  </style>
+</head>
+<body>
+  <div class="startup-shell" id="startup-shell">
+    <img class="startup-logo" src="assets/assets/brand/antibet_logo_master.png" alt="AntiBet oficial">
+    <div class="startup-title">AntiBet | Inovexa Software</div>
+    <div class="startup-subtitle">Escudo ativo contra impulsos de aposta</div>
+    <div class="spinner" aria-hidden="true"></div>
+  </div>
+  <script src="flutter_bootstrap.js" async></script>
+</body>
+</html>

@@ -1,5 +1,17 @@
 {
   "projects": {
     "default": "inovexa-institucional"
+  },
+  "targets": {
+    "inovexa-institucional": {
+      "hosting": {
+        "inovexa-site": [
+          "inovexa-site"
+        ],
+        "antibet-app": [
+          "antibet-app"
+        ]
+      }
+    }
   }
 }
