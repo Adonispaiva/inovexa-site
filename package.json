@@ -1,0 +1,12 @@
+{
+  "name": "inovexa-site",
+  "private": true,
+  "scripts": {
+    "build:css": "tailwindcss -i ./src/input.css -o ./public/assets/css/site.css --minify",
+    "dev:css": "tailwindcss -i ./src/input.css -o ./public/assets/css/site.css --watch",
+    "serve": "python -m http.server 3000 --directory public"
+  },
+  "devDependencies": {
+    "tailwindcss": "3.4.17"
+  }
+}
