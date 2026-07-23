@@ -1,28 +1,25 @@
 <!DOCTYPE html>
-<html lang="pt-BR" class="dark">
+<html lang="pt-BR" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Inovexa Software | www.inovexa.software</title>
-    <meta name="description" content="Inovexa Software: AI-first software para produtos digitais de impacto real.">
+    <title>Inovexa Software | Tecnologia com propósito</title>
+    <meta name="description" content="Inovexa Software cria produtos digitais úteis, seguros e humanos, com inteligência artificial aplicada a problemas reais.">
     <link rel="canonical" href="https://www.inovexa.software/">
     <meta property="og:type" content="website">
-    <meta property="og:title" content="Inovexa Software | www.inovexa.software">
-    <meta property="og:description" content="AI-first software para produtos digitais de impacto real.">
+    <meta property="og:title" content="Inovexa Software | Tecnologia com propósito">
+    <meta property="og:description" content="IA aplicada a problemas reais.">
     <meta property="og:url" content="https://www.inovexa.software/">
     <meta property="og:site_name" content="Inovexa Software">
     <meta property="og:image" content="https://www.inovexa.software/logo_inovexa_3d_brilhante_transparent_cropped.png">
     <meta name="twitter:card" content="summary_large_image">
+    <link rel="icon" href="data:,">
     <script>
         const host = window.location.host.toLowerCase();
         if (host === 'inovexa-institucional.web.app' || host === 'inovexa-institucional.firebaseapp.com') {
             window.location.replace('https://www.inovexa.software' + window.location.pathname + window.location.search + window.location.hash);
         }
-        if (window.location.hash === '#institucional') {
-            history.replaceState(null, '', window.location.pathname + window.location.search);
-        }
     </script>
-    <link rel="preload" as="image" href="./logo-antibet_transparente_cropped.png">
     <link rel="preload" as="image" href="./logo_inovexa_3d_brilhante_transparent_cropped.png" fetchpriority="high">
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -33,542 +30,251 @@
             darkMode: 'class',
             theme: {
                 extend: {
-                    fontFamily: {
-                        sans: ['Inter', 'sans-serif'],
-                        display: ['Montserrat', 'sans-serif']
-                    },
+                    fontFamily: { sans: ['Inter', 'sans-serif'], display: ['Montserrat', 'sans-serif'] },
                     colors: {
-                        inovexa: {
-                            dark: '#0B1220',
-                            deep: '#13213A',
-                            card: 'rgba(15, 23, 42, 0.72)',
-                            line: 'rgba(148, 163, 184, 0.16)',
-                            blue: '#4F8CFF',
-                            accent: '#F59E0B'
-                        }
+                        midnight: '#060B18', navy: '#0B1226', surface: '#101A31',
+                        inovexa: { blue: '#3B82F6', cyan: '#22D3EE', green: '#34D399', amber: '#F59E0B' }
                     },
-                    boxShadow: {
-                        glow: '0 0 0 1px rgba(79, 140, 255, 0.16), 0 30px 90px rgba(0, 0, 0, 0.55)'
-                    }
+                    boxShadow: { soft: '0 24px 70px rgba(0,0,0,.32)' }
                 }
             }
-        }
+        };
     </script>
     <style>
-        .glass {
-            background: rgba(15, 23, 42, 0.72);
-            backdrop-filter: blur(18px);
-            -webkit-backdrop-filter: blur(18px);
+        :root { color-scheme: dark; }
+        * { box-sizing: border-box; }
+        body { background: #060B18; color: #F8FAFC; }
+        .site-bg { background: radial-gradient(circle at 78% 8%, rgba(59,130,246,.15), transparent 28rem), radial-gradient(circle at 10% 38%, rgba(34,211,238,.07), transparent 24rem), #060B18; }
+        .header-surface { background: linear-gradient(180deg, #48617F 0%, #3E5876 100%); backdrop-filter: blur(18px); -webkit-backdrop-filter: blur(18px); box-shadow: 0 8px 22px rgba(6,11,24,.22); }
+        .header-surface > div:first-child > a:first-child { position: relative; isolation: isolate; overflow: visible; background: transparent; }
+        .header-surface > div:first-child > a:first-child::before { content: ''; position: absolute; z-index: 0; pointer-events: none; width: 190%; height: 220%; left: 50%; top: 50%; transform: translate(-50%, -50%); background: radial-gradient(ellipse at center, rgba(220,236,250,.52) 0%, rgba(190,220,243,.32) 28%, rgba(150,194,226,.16) 48%, rgba(115,157,194,.07) 64%, rgba(72,97,127,.02) 76%, rgba(72,97,127,0) 86%); }
+        .hero-indicator-support { color: inherit; font-family: inherit; font-size: inherit; font-weight: 400; line-height: inherit; letter-spacing: inherit; opacity: inherit; }
+        .header-surface > div:first-child > a:first-child img { position: relative; z-index: 1; }
+        .panel { background: rgba(16,26,49,.78); border: 1px solid rgba(148,163,184,.14); }
+        .muted { color: #94A3B8; }
+        .focus-ring:focus-visible, a:focus-visible, summary:focus-visible { outline: 2px solid #22D3EE; outline-offset: 4px; }
+        .skip-link { position: fixed; left: 1rem; top: -5rem; z-index: 100; background: #22D3EE; color: #06111f; padding: .75rem 1rem; border-radius: .75rem; font-weight: 800; }
+        .skip-link:focus { top: 1rem; }
+        .eyebrow { color: #22D3EE; font-size: .7rem; font-weight: 800; letter-spacing: .24em; text-transform: uppercase; }
+        .constellation { position: relative; min-height: 31rem; }
+        .constellation::before { content: ''; position: absolute; inset: 8% 8%; border: 1px solid rgba(34,211,238,.16); border-radius: 48% 52% 42% 58%; transform: rotate(-12deg); pointer-events: none; }
+        .orbit-line { position: absolute; height: 1px; background: linear-gradient(90deg, transparent, rgba(34,211,238,.5), transparent); transform-origin: left center; pointer-events: none; }
+        .orbit-line.one { width: 62%; left: 23%; top: 47%; transform: rotate(-24deg); }
+        .orbit-line.two { width: 60%; left: 25%; top: 49%; transform: rotate(23deg); }
+        .orbit-line.three { width: 43%; left: 29%; top: 51%; transform: rotate(0deg); }
+        .core { position: absolute; left: 50%; top: 50%; transform: translate(-50%,-50%); width: 9.5rem; height: 9.5rem; display: grid; place-items: center; border-radius: 50%; border: 1px solid rgba(96,165,250,.42); background: radial-gradient(circle, rgba(59,130,246,.28), rgba(16,26,49,.92) 68%); box-shadow: 0 0 80px rgba(59,130,246,.18); text-align: center; }
+        .node { position: absolute; z-index: 2; display: flex; width: 11.5rem; min-height: 9.6rem; flex-direction: column; align-items: center; justify-content: center; gap: .45rem; border-radius: 1.15rem; border: 1px solid rgba(130,152,177,.9); background: linear-gradient(145deg, #C3CEDB 0%, #AEBCCD 100%); padding: .72rem; text-align: center; box-shadow: 0 18px 40px rgba(6,11,24,.34); transition: transform .2s ease, border-color .2s ease; }
+        .node > span { color: #0f2d24 !important; }
+        .node:hover { transform: translateY(-3px); border-color: rgba(8,145,178,.7); }
+        .node img { max-height: 4.2rem; max-width: 8.4rem; width: auto; object-fit: contain; }
+        .node.antibet img { width: 8.5rem; height: 8.5rem; max-height: none; max-width: none; transform: scale(1.25); }
+        .node.bitlinker img { width: 10.5rem; height: 8.5rem; max-height: none; max-width: none; transform: scale(1.25); }
+        .node.clara img { width: 10.5rem; height: 6.2rem; max-height: none; max-width: none; }
+        .node.nutri img { width: 10.5rem; height: 6.2rem; max-height: none; max-width: none; }
+        .node.mestre img { width: 10.5rem; height: 6.8rem; max-height: none; max-width: none; }
+        .node.antibet { left: 0; top: 4%; }
+        .node.bitlinker { right: 0; top: 8%; }
+        .node.clara { left: 0; bottom: 8%; }
+        .node.nutri { right: 0; bottom: 5%; }
+        .node.mestre { left: 50%; bottom: -1%; transform: translateX(-50%); }
+        .node.mestre:hover { transform: translateX(-50%) translateY(-3px); }
+        .product-logo-surface { display: grid; min-height: 9rem; place-items: center; overflow: visible; border-radius: 1.1rem; border: 1px solid rgba(130,152,177,.9); background: linear-gradient(145deg, #C3CEDB 0%, #AEBCCD 100%); padding: .78rem; box-shadow: 0 12px 28px rgba(6,11,24,.3); }
+        .product-logo-surface img { max-height: 7.2rem; max-width: 92%; object-fit: contain; }
+        .product-logo-surface.mestre-surface { background: linear-gradient(145deg, #C3CEDB 0%, #AEBCCD 100%); }
+        #produto-antibet .product-logo-surface img { width: 11rem; height: 9rem; max-width: none; max-height: none; transform: scale(1.46); }
+        #produto-bitlinker .product-logo-surface img { width: 17rem; height: 8rem; max-width: none; max-height: none; transform: scale(1.62); }
+        #produto-clara .product-logo-surface img { width: 17rem; height: 8rem; max-width: none; max-height: none; }
+        #produto-nutrifacil .product-logo-surface img { width: 17rem; height: 8rem; max-width: none; max-height: none; }
+        #produto-mestre-do-reparo .product-logo-surface img { width: 17rem; height: 8.5rem; max-width: none; max-height: none; }
+        section[aria-label="Ecossistema de produtos"] a { min-height: 3.5rem; border-color: rgba(130,152,177,.9); background: linear-gradient(145deg, #C3CEDB 0%, #AEBCCD 100%); color: #0f172a; box-shadow: 0 8px 18px rgba(6,11,24,.2); }
+        section[aria-label="Ecossistema de produtos"] a:hover { border-color: rgba(8,145,178,.7); background: linear-gradient(145deg, #C9D4E0 0%, #B7C5D5 100%); }
+        section[aria-label="Ecossistema de produtos"] a img { width: 4.2rem; height: 3.5rem; max-width: none; object-fit: contain; transform: scale(1.35); }
+        .product-card { display: flex; flex-direction: column; }
+        .product-card .summary { flex: 1; }
+        .info-grid { display: grid; gap: .65rem; grid-template-columns: repeat(3, minmax(0, 1fr)); }
+        .info-item { border: 1px solid rgba(148,163,184,.13); background: rgba(255,255,255,.035); border-radius: .85rem; padding: .75rem; }
+        .info-item dt { color: #94A3B8; font-size: .62rem; font-weight: 800; letter-spacing: .16em; text-transform: uppercase; }
+        .info-item dd { margin-top: .35rem; color: #E2E8F0; font-size: .78rem; line-height: 1.45; }
+        .status { display: inline-flex; width: fit-content; border-radius: 9999px; border: 1px solid rgba(148,163,184,.2); padding: .45rem .75rem; font-size: .67rem; font-weight: 800; letter-spacing: .14em; text-transform: uppercase; }
+        @media (max-width: 1023px) { .constellation { min-height: 36rem; } }
+        @media (max-width: 639px) {
+            .header-surface > div:first-child > a:first-child::before { width: 160%; height: 190%; }
+            .product-card { min-width: 0; }
+            .constellation { min-height: auto; display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: .75rem; padding-top: 0; }
+            .constellation::before, .orbit-line, .core { display: none; }
+            .node, .node.antibet, .node.bitlinker, .node.clara, .node.nutri, .node.mestre { position: static; transform: none; width: auto; min-height: 8.8rem; }
+            .node.mestre:hover { transform: translateY(-3px); }
+            .node.mestre { grid-column: 1 / -1; }
+            .node img { max-width: 8rem; }
+            .node.antibet img { width: 7.2rem; height: 7.2rem; transform: scale(1.25); }
+            .node.bitlinker img { width: 8.5rem; height: 5.8rem; transform: scale(1.25); }
+            .node.clara img, .node.nutri img, .node.mestre img { width: 8.5rem; height: 5.8rem; }
+            #produto-antibet .product-logo-surface img { transform: scale(1.34); }
+            #produto-bitlinker .product-logo-surface img { width: min(17rem, calc(100% / 1.38)); transform: scale(1.38); }
+            section[aria-label="Ecossistema de produtos"] a img { width: 3.8rem; height: 3.1rem; transform: scale(1.35); }
+            .info-grid { grid-template-columns: 1fr; }
         }
-        .card-copy {
-            color: rgb(148 163 184);
-            font-size: 15px;
-            line-height: 1.9;
-            letter-spacing: -0.01em;
-        }
-        .card-copy > p + p {
-            margin-top: 1rem;
-        }
-        .card-tech {
-            color: rgb(148 163 184);
-            font-size: 14px;
-            line-height: 1.8;
-        }
-        .product-status {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            border-radius: 9999px;
-            border: 1px solid rgba(148, 163, 184, 0.16);
-            background: rgba(255, 255, 255, 0.05);
-            padding: 0.45rem 0.8rem;
-            font-size: 11px;
-            font-weight: 700;
-            line-height: 1.2;
-            letter-spacing: 0.22em;
-            text-transform: uppercase;
-        }
-        .product-status--blue {
-            border-color: rgba(96, 165, 250, 0.22);
-            background: rgba(59, 130, 246, 0.10);
-            color: rgb(191 219 254);
-        }
-        .product-status--emerald {
-            border-color: rgba(52, 211, 153, 0.22);
-            background: rgba(16, 185, 129, 0.10);
-            color: rgb(167 243 208);
-        }
-        .product-status--amber {
-            border-color: rgba(245, 158, 11, 0.22);
-            background: rgba(245, 158, 11, 0.10);
-            color: rgb(253 230 138);
-        }
-        .product-status--fuchsia {
-            border-color: rgba(232, 121, 249, 0.22);
-            background: rgba(217, 70, 239, 0.10);
-            color: rgb(240 171 252);
-        }
-        .scan-grid {
-            display: grid;
-            gap: 0.75rem;
-            grid-template-columns: repeat(1, minmax(0, 1fr));
-        }
-        @media (min-width: 640px) {
-            .scan-grid {
-                grid-template-columns: repeat(3, minmax(0, 1fr));
-            }
-        }
-        .scan-item {
-            border-radius: 1rem;
-            border: 1px solid rgba(255, 255, 255, 0.08);
-            background: rgba(255, 255, 255, 0.04);
-            padding: 0.9rem;
-        }
-        .scan-label {
-            font-size: 10px;
-            font-weight: 700;
-            letter-spacing: 0.26em;
-            text-transform: uppercase;
-            color: rgb(148 163 184);
-        }
-        .scan-text {
-            margin-top: 0.4rem;
-            font-size: 13px;
-            line-height: 1.6;
-            color: rgb(226 232 240);
-        }
-        .product-cta {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            width: fit-content;
-            border-radius: 9999px;
-            border: 1px solid rgba(79, 140, 255, 0.28);
-            background: rgba(79, 140, 255, 0.14);
-            padding: 0.8rem 1.15rem;
-            font-size: 14px;
-            font-weight: 700;
-            color: white;
-            box-shadow: 0 12px 30px rgba(79, 140, 255, 0.18);
-            transition: transform 0.2s ease, background-color 0.2s ease, border-color 0.2s ease;
-        }
-        .product-cta:hover {
-            transform: translateY(-1px);
-            background: rgba(79, 140, 255, 0.22);
-            border-color: rgba(96, 165, 250, 0.38);
-        }
-        .product-cta:focus-visible {
-            outline: 2px solid rgba(255, 255, 255, 0.9);
-            outline-offset: 2px;
-        }
-        .footer-trust {
-            display: grid;
-            gap: 1rem;
-        }
-        @media (min-width: 768px) {
-            .footer-trust {
-                grid-template-columns: 1.15fr 0.85fr;
-                align-items: center;
-            }
-        }
-        .footer-links {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 0.75rem 1.25rem;
-        }
-        @media (min-width: 768px) {
-            .footer-links {
-                justify-content: flex-end;
-            }
-        }
-        .footer-links a {
-            color: rgb(226 232 240);
-            transition: color 0.2s ease;
-        }
-        .footer-links a:hover {
-            color: rgb(255 255 255);
-        }
-        .hero-logo-wrap {
-            position: relative;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            isolation: isolate;
-            padding-inline: 1rem;
-        }
-        .hero-logo-wrap::before {
-            content: "";
-            position: absolute;
-            left: 50%;
-            top: 54%;
-            width: min(92vw, 58rem);
-            height: min(38vw, 21rem);
-            transform: translate(-50%, -50%);
-            border-radius: 9999px;
-            background: radial-gradient(ellipse at center 40%, rgba(255, 255, 255, 0.96) 0%, rgba(255, 255, 255, 0.74) 16%, rgba(255, 255, 255, 0.28) 34%, rgba(125, 211, 252, 0.14) 60%, rgba(59, 130, 246, 0.04) 82%, transparent 100%);
-            filter: blur(44px);
-            opacity: 0.96;
-            z-index: -1;
-        }
-        .hero-logo-image {
-            position: relative;
-            z-index: 1;
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after { scroll-behavior: auto !important; transition-duration: .01ms !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; }
         }
     </style>
 </head>
-<body class="bg-inovexa-dark text-slate-300 font-sans antialiased selection:bg-inovexa-blue selection:text-white overflow-x-hidden">
-    <div class="fixed inset-0 -z-10 overflow-hidden">
-        <div class="absolute inset-0 bg-[radial-gradient(circle_at_top,_rgba(79,140,255,0.24),_transparent_34%),radial-gradient(circle_at_80%_20%,_rgba(245,158,11,0.08),_transparent_26%),linear-gradient(180deg,_#243d5f_0%,_#31547a_44%,_#2a4c70_100%)]"></div>
-        <div class="absolute -top-40 left-1/2 h-96 w-96 -translate-x-1/2 rounded-full bg-white/[0.12] blur-3xl"></div>
-        <div class="absolute bottom-0 right-0 h-[30rem] w-[30rem] rounded-full bg-blue-400/18 blur-3xl"></div>
-    </div>
+<body class="site-bg min-h-screen overflow-x-hidden font-sans antialiased selection:bg-inovexa-blue selection:text-white">
+    <a class="skip-link" href="#main-content">Pular para o conteúdo principal</a>
+    <header class="header-surface sticky top-0 z-50 border-b border-white/10">
+        <div class="mx-auto flex max-w-7xl items-center justify-between gap-6 px-5 py-4 sm:px-8 lg:px-10">
+            <a href="#top" class="focus-ring shrink-0" aria-label="Inovexa Software, início">
+                <img src="./logo_inovexa_3d_brilhante_transparent_cropped.png" alt="Inovexa Software" class="h-auto w-[11rem] object-contain sm:w-[13rem] lg:w-[17.5rem]">
+            </a>
+            <nav class="hidden items-center gap-7 text-sm text-slate-300 lg:flex" aria-label="Navegação principal">
+                <a class="focus-ring transition-colors hover:text-white" href="#produtos">Produtos</a>
+                <a class="focus-ring transition-colors hover:text-white" href="#tecnologia">Tecnologia</a>
+                <a class="focus-ring transition-colors hover:text-white" href="#proposito">Propósito</a>
+                <a class="focus-ring transition-colors hover:text-white" href="#contato">Contato</a>
+            </nav>
+            <details class="relative lg:hidden">
+                <summary class="focus-ring cursor-pointer list-none rounded-full border border-white/15 px-4 py-2 text-sm text-slate-200">Menu</summary>
+                <nav class="panel absolute right-0 top-12 grid min-w-48 gap-1 rounded-2xl p-2 text-sm shadow-soft" aria-label="Navegação móvel">
+                    <a class="focus-ring rounded-xl px-3 py-2 hover:bg-white/10" href="#produtos">Produtos</a>
+                    <a class="focus-ring rounded-xl px-3 py-2 hover:bg-white/10" href="#tecnologia">Tecnologia</a>
+                    <a class="focus-ring rounded-xl px-3 py-2 hover:bg-white/10" href="#proposito">Propósito</a>
+                    <a class="focus-ring rounded-xl px-3 py-2 hover:bg-white/10" href="#contato">Contato</a>
+                </nav>
+            </details>
+        </div>
+    </header>
 
-    <main id="top" class="relative">
-        <section class="max-w-7xl mx-auto px-6 sm:px-8 lg:px-10 pt-16 sm:pt-24 pb-10 sm:pb-16 text-center">
-            <div class="hero-logo-wrap mt-8 flex justify-center">
-                <img src="./logo_inovexa_3d_brilhante_transparent_cropped.png" alt="Inovexa Software Logo" loading="eager" decoding="async" fetchpriority="high" class="hero-logo-image w-[min(70vw,40rem)] h-auto object-contain drop-shadow-[0_18px_45px_rgba(15,23,42,0.30)]">
+    <main id="main-content">
+        <section id="top" class="mx-auto grid max-w-7xl items-center gap-14 px-5 pb-16 pt-16 sm:px-8 sm:pt-24 lg:grid-cols-[.88fr_1.12fr] lg:gap-8 lg:px-10 lg:pb-24">
+            <div class="max-w-2xl">
+                <p class="eyebrow">Tecnologia com propósito</p>
+                <h1 class="mt-5 font-display text-5xl font-extrabold leading-[.98] tracking-[-.05em] text-white sm:text-6xl lg:text-7xl">IA aplicada a problemas reais.</h1>
+                <p class="mt-7 max-w-xl text-lg leading-8 text-slate-300 sm:text-xl">Criamos produtos digitais úteis, seguros e humanos — da ideia à operação.</p>
+                <div class="mt-9 flex flex-col gap-3 sm:flex-row">
+                    <a href="#produtos" class="focus-ring inline-flex min-h-12 items-center justify-center rounded-full bg-inovexa-blue px-6 py-3 text-sm font-extrabold text-white shadow-lg shadow-blue-500/20 transition hover:-translate-y-0.5 hover:bg-blue-500">Conheça nossos produtos</a>
+                    <a href="mailto:contato@inovexa.software" class="focus-ring inline-flex min-h-12 items-center justify-center rounded-full border border-white/15 bg-white/5 px-6 py-3 text-sm font-bold text-slate-100 transition hover:-translate-y-0.5 hover:bg-white/10">Fale com a Inovexa</a>
+                </div>
+                <div class="mt-12 grid max-w-lg grid-cols-3 gap-4 border-t border-white/10 pt-5 text-xs text-slate-400">
+                    <span><strong class="block font-semibold text-white">Produtos para</strong><span class="hero-indicator-support">necessidades reais</span></span>
+                    <span><strong class="block text-white">IA aplicada</strong><span class="hero-indicator-support">com propósito</span></span>
+                    <span><strong class="block text-white">Humano</strong><span class="hero-indicator-support">por princípio</span></span>
+                </div>
             </div>
-            <div class="mt-20 sm:mt-24 max-w-5xl mx-auto">
-                <h1 class="font-display text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight text-white">
-                    AI-first software para produtos digitais de impacto real.
-                </h1>
-                <p class="mt-6 text-lg sm:text-xl leading-8 text-slate-200 max-w-3xl mx-auto">
-                    A Inovexa Software desenvolve aplicações SaaS, plataformas cloud-native e aplicativos mobile com inteligência artificial aplicada a problemas reais, unindo engenharia, segurança, governança técnica e impacto humano positivo.
-                </p>
-            </div>
-            <div class="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
-                <a href="mailto:contato@inovexa.software" class="inline-flex items-center justify-center rounded-full bg-inovexa-blue px-7 py-3.5 text-sm font-semibold text-white shadow-lg shadow-blue-500/25 transition-transform duration-200 hover:-translate-y-0.5">
-                    Fale com a Inovexa
+            <div class="constellation" aria-label="Constelação de produtos Inovexa">
+                <span class="orbit-line one" aria-hidden="true"></span><span class="orbit-line two" aria-hidden="true"></span><span class="orbit-line three" aria-hidden="true"></span>
+                <div class="core" aria-hidden="true"><div><span class="eyebrow block">Inovexa</span><span class="mt-2 block text-xs text-slate-300">produtos úteis<br>em movimento</span></div></div>
+                <a class="node antibet focus-ring" href="https://antibet.inovexa.software" aria-label="Abrir AntiBet">
+                    <img src="/antibet-app/assets/assets/brand/logo-antibet_transparente.png" alt="AntiBet">
+                    <span class="text-[.68rem] font-bold text-emerald-200">Prevenção e apoio</span>
                 </a>
-                <a href="https://antibet.inovexa.software" class="product-cta px-7 py-3.5">
-                    Acessar AntiBet (Live App)
+                <a class="node bitlinker focus-ring" href="#produto-bitlinker" aria-label="Ver BitLinker">
+                    <img src="./bitlinker-logo-1024.png" alt="BitLinker">
+                    <span class="text-[.68rem] font-bold text-emerald-200">Automação</span>
                 </a>
-                <button type="button" onclick="document.querySelector('.institucional-section')?.scrollIntoView({behavior:'smooth'});" class="inline-flex items-center justify-center rounded-full border border-white/12 bg-white/5 px-7 py-3.5 text-sm font-semibold text-slate-200 transition-colors duration-200 hover:bg-white/10">
-                    Ver propósito da marca
-                </button>
-            </div>
-            <div class="mt-12 grid grid-cols-1 sm:grid-cols-3 gap-3 max-w-4xl mx-auto text-left">
-                <div class="glass rounded-2xl border border-white/10 p-4">
-                    <p class="text-xs uppercase tracking-[0.24em] text-slate-500">Foco</p>
-                    <p class="mt-2 text-sm text-slate-200">Pessoas, utilidade e valor real no dia a dia.</p>
-                </div>
-                <div class="glass rounded-2xl border border-white/10 p-4">
-                    <p class="text-xs uppercase tracking-[0.24em] text-slate-500">Experiência</p>
-                    <p class="mt-2 text-sm text-slate-200">Produtos claros, simples e orientados ao uso real.</p>
-                </div>
-                <div class="glass rounded-2xl border border-white/10 p-4">
-                    <p class="text-xs uppercase tracking-[0.24em] text-slate-500">Portfólio</p>
-                    <p class="mt-2 text-sm text-slate-200">IA como peça central em soluções aplicáveis.</p>
-                </div>
+                <a class="node clara focus-ring" href="#produto-clara" aria-label="Ver Clara">
+                    <img src="./logo_clara.png" alt="Clara">
+                    <span class="text-[.68rem] font-bold text-amber-200">Bem-estar</span>
+                </a>
+                <a class="node nutri focus-ring" href="#produto-nutrifacil" aria-label="Ver NutriFácil">
+                    <img src="./nutrifacil_fundo_transparente.png" alt="NutriFácil">
+                    <span class="text-[.68rem] font-bold text-fuchsia-200">Nutrição</span>
+                </a>
+                <a class="node mestre focus-ring" href="/mestre-do-reparo/" aria-label="Abrir Mestre do Reparo">
+                    <img src="/mestre-do-reparo/logo-oficial.png" alt="Mestre do Reparo">
+                    <span class="text-[.68rem] font-bold text-cyan-200">Manutenção</span>
+                </a>
             </div>
         </section>
 
-        <section class="institucional-section max-w-7xl mx-auto px-6 sm:px-8 lg:px-10 py-10 sm:py-14">
-            <div class="grid gap-6 lg:grid-cols-[1.15fr_0.85fr] items-stretch">
-                <div class="glass rounded-[2rem] border border-white/10 p-8 sm:p-10 shadow-glow">
-                    <p class="text-xs font-semibold uppercase tracking-[0.3em] text-inovexa-accent">Posicionamento</p>
-                    <h2 class="mt-4 font-display text-3xl sm:text-4xl font-bold text-white">
-                        Uma marca pensada para pessoas, clareza e utilidade real.
-                    </h2>
-                    <p class="mt-5 text-base sm:text-lg leading-8 text-slate-400 max-w-2xl">
-                        A Inovexa integra tecnologia, ética e usabilidade de produto para criar aplicativos que resolvem necessidades concretas, com inteligência artificial no centro da entrega e da experiência.
-                    </p>
-                    <div class="mt-6 text-sm sm:text-base leading-7 text-slate-300 max-w-2xl">
-                        <p><strong>Pilares de Atuação:</strong></p>
-                        <ul class="mt-3 space-y-3 list-disc list-inside">
-                            <li><strong>Utilidade Real:</strong> Foco absoluto em resolver problemas cotidianos sem atritos.</li>
-                            <li><strong>Privacidade by Design:</strong> Arquitetura estruturada para garantir segurança e isolamento de dados.</li>
-                            <li><strong>Automação Invisível:</strong> A tecnologia trabalha nos bastidores para simplificar a vida do usuário.</li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="glass rounded-[2rem] border border-white/10 p-8 sm:p-10">
-                    <p class="text-xs font-semibold uppercase tracking-[0.3em] text-inovexa-accent">Arquitetura Tecnológica</p>
-                    <ul class="mt-5 space-y-4 text-sm sm:text-base text-slate-300">
-                        <li class="flex gap-3"><span class="mt-1 h-2.5 w-2.5 rounded-full bg-inovexa-blue"></span><span><strong>Engenharia assistida por IA:</strong> A Inovexa utiliza uma arquitetura interna de engenharia assistida por IA para acelerar a criação, validação e evolução de produtos digitais.</span></li>
-                        <li class="flex gap-3"><span class="mt-1 h-2.5 w-2.5 rounded-full bg-inovexa-blue"></span><span><strong>Backend e infraestrutura:</strong> Nossa base combina backend em Python/FastAPI, aplicações multiplataforma, bancos relacionais, conteinerização, integração com provedores de IA, automação de testes e pipelines de qualidade.</span></li>
-                        <li class="flex gap-3"><span class="mt-1 h-2.5 w-2.5 rounded-full bg-inovexa-blue"></span><span><strong>Segurança e governança:</strong> A estrutura é pensada para rastreabilidade, modularidade, segurança por padrão e evolução contínua.</span></li>
-                        <li class="flex gap-3"><span class="mt-1 h-2.5 w-2.5 rounded-full bg-inovexa-blue"></span><span><strong>Impacto útil:</strong> O trabalho é guiado por clareza técnica, revisão de segurança e foco em produtos que realmente ajudam as pessoas.</span></li>
+        <section class="border-y border-white/10 bg-white/[.025]" aria-label="Ecossistema de produtos">
+            <div class="mx-auto flex max-w-7xl flex-wrap items-center justify-center gap-3 px-5 py-5 sm:gap-5 sm:px-8 lg:px-10">
+                <span class="mr-1 text-[.68rem] font-extrabold uppercase tracking-[.2em] text-slate-500">Produtos Inovexa</span>
+                <a href="#produto-antibet" aria-label="Abrir produto AntiBet" class="focus-ring flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-2 text-xs text-slate-200 hover:border-emerald-300/40"><img src="/antibet-app/assets/assets/brand/logo-antibet_transparente.png" alt="AntiBet" title="AntiBet" class="h-6 w-7 object-contain"></a>
+                <a href="#produto-bitlinker" aria-label="Abrir produto BitLinker" class="focus-ring flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-2 text-xs text-slate-200 hover:border-emerald-300/40"><img src="./bitlinker-logo-1024.png" alt="BitLinker" title="BitLinker" class="h-6 w-7 object-contain"></a>
+                <a href="#produto-clara" aria-label="Abrir produto Clara" class="focus-ring flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-2 text-xs text-slate-200 hover:border-amber-300/40"><img src="./logo_clara.png" alt="Clara" title="Clara" class="h-6 w-8 object-contain"></a>
+                <a href="#produto-nutrifacil" aria-label="Abrir produto NutriFácil" class="focus-ring flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-2 text-xs text-slate-200 hover:border-fuchsia-300/40"><img src="./nutrifacil_fundo_transparente.png" alt="NutriFácil" title="NutriFácil" class="h-6 w-9 object-contain"></a>
+                <a href="#produto-mestre-do-reparo" aria-label="Abrir produto Mestre do Reparo" class="focus-ring flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-2 text-xs text-slate-200 hover:border-cyan-300/40"><img src="/mestre-do-reparo/logo-oficial.png" alt="Mestre do Reparo" title="Mestre do Reparo" class="h-6 w-9 object-contain"></a>
+            </div>
+        </section>
+
+        <section id="proposito" class="mx-auto grid max-w-7xl gap-6 px-5 py-16 sm:px-8 lg:grid-cols-[1.05fr_.95fr] lg:px-10 lg:py-24">
+            <div class="panel rounded-[2rem] p-7 shadow-soft sm:p-10">
+                <p class="eyebrow text-inovexa-amber">Propósito</p>
+                <h2 class="mt-4 max-w-2xl font-display text-3xl font-bold tracking-tight text-white sm:text-4xl">Uma marca pensada para pessoas, clareza e utilidade real.</h2>
+                <p class="mt-5 max-w-2xl text-base leading-8 text-slate-300 sm:text-lg">A Inovexa combina tecnologia, ética e usabilidade para criar produtos que resolvem necessidades concretas. A inteligência artificial é aplicada quando gera valor real para o usuário.</p>
+                <div class="mt-8">
+                    <p class="font-bold text-white">Pilares de Atuação</p>
+                    <ul class="mt-4 grid gap-3 text-sm leading-7 text-slate-300 sm:grid-cols-3">
+                        <li class="rounded-2xl border border-white/10 bg-white/[.035] p-4"><strong class="text-white">Utilidade Real</strong><br>Foco absoluto em resolver problemas cotidianos sem atritos.</li>
+                        <li class="rounded-2xl border border-white/10 bg-white/[.035] p-4"><strong class="text-white">Privacidade desde a concepção</strong><br>Produtos pensados para respeitar a segurança e a privacidade das pessoas.</li>
+                        <li class="rounded-2xl border border-white/10 bg-white/[.035] p-4"><strong class="text-white">Automação Invisível</strong><br>A tecnologia trabalha nos bastidores para simplificar a vida do usuário.</li>
                     </ul>
                 </div>
             </div>
-        </section>
-
-        <section id="produtos" class="max-w-7xl mx-auto px-6 sm:px-8 lg:px-10 py-10 sm:py-16">
-            <div class="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between mb-10">
-                <div>
-                    <p class="text-xs font-semibold uppercase tracking-[0.3em] text-inovexa-accent">Ecossistema</p>
-                    <h2 class="mt-3 font-display text-3xl sm:text-4xl font-bold text-white">Produtos com narrativa clara e posicionamento sólido</h2>
-                </div>
-            </div>
-
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
-                <article id="antibet" class="glass h-full rounded-[2rem] border border-white/10 p-7 sm:p-8 shadow-glow transition-transform duration-300 hover:-translate-y-1 flex flex-col">
-                    <div class="flex items-start justify-between gap-4 mb-6">
-                        <div class="grid h-28 w-48 place-items-center overflow-hidden rounded-3xl border border-white/10 bg-white/95 px-4 py-3 sm:h-32 sm:w-56 shadow-[0_18px_40px_rgba(0,0,0,0.18)]">
-                            <img src="/antibet-app/assets/assets/brand/antibet_logo_master.png" alt="Logo oficial do AntiBet" loading="eager" decoding="async" fetchpriority="high" class="block h-22 sm:h-26 w-auto max-w-full object-contain object-center mx-auto">
-                        </div>
-                        <span class="rounded-full border border-blue-400/20 bg-blue-400/10 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.24em] text-blue-200">Saúde digital</span>
-                    </div>
-                    <h3 class="text-2xl font-display font-bold text-white">AntiBet</h3>
-                    <p class="mt-3 text-xs font-semibold uppercase tracking-[0.22em] text-blue-200/90">
-                        Escudo ativo contra impulsos de aposta
-                    </p>
-                    <div class="mt-3">
-                        <span class="product-status product-status--blue">Blindagem ativa</span>
-                    </div>
-                    <div class="mt-4 scan-grid">
-                        <div class="scan-item">
-                            <p class="scan-label">Escudo ativo</p>
-                            <p class="scan-text">O AntiBet está protegendo você com monitoramento contínuo.</p>
-                        </div>
-                        <div class="scan-item">
-                            <p class="scan-label">Modo</p>
-                            <p class="scan-text">Monitoramento com foco em prevenção e pausa no momento crítico.</p>
-                        </div>
-                        <div class="scan-item">
-                            <p class="scan-label">Mensagem</p>
-                            <p class="scan-text">Blindagem AntiBet ativada com sucesso.</p>
-                        </div>
-                    </div>
-                    <div class="mt-3 card-copy flex-1">
-                        <p>
-                        O AntiBet é a versão oficial distribuída aos testadores: uma interface de proteção e autocontrole para ajudar o usuário a interromper o impulso no momento certo.
-                        </p>
-                        <p>
-                        A experiência foi desenhada para ser direta, discreta e acionável, com foco em apoio preventivo, monitoramento e intervenção segura.
-                        </p>
-                        <p>
-                        O posicionamento do app segue a linguagem do APK oficial: escudo ativo, monitoramento e cuidado contínuo.
-                        </p>
-                        <p class="mt-3 text-sm leading-7 text-slate-300/85">
-                        Referência de interface: proteção ativa, apoio preventivo e linguagem de cuidado.
-                        </p>
-                    </div>
-                    <div class="mt-5 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
-                        <span class="inline-flex items-center justify-center rounded-full border border-white/12 bg-white/5 px-7 py-3.5 text-sm font-semibold text-slate-200">Versão oficial</span>
-                        <p class="max-w-xl text-sm leading-6 text-slate-300/90">O AntiBet é uma ferramenta de apoio e prevenção. Não substitui profissionais de saúde.</p>
-                    </div>
-                    <div class="mt-6 rounded-2xl border border-white/8 bg-black/20 p-5">
-                        <p class="card-tech">
-                            <strong class="text-slate-200">Destaque Técnico:</strong> Flutter UI Midnight Premium (Glassmorphism), Backend FastAPI com Python 3.12, Cache de Prompts com Redis, Google Cloud Speech-to-Text (STT) e Text-to-Speech (TTS), Clean Architecture com DDD.
-                        </p>
-                    </div>
-                </article>
-
-                <article id="bitlinker" class="glass h-full rounded-[2rem] border border-white/10 p-7 sm:p-8 shadow-glow transition-transform duration-300 hover:-translate-y-1 flex flex-col">
-                    <div class="flex items-start justify-between gap-4 mb-6">
-                        <div class="grid h-28 w-48 place-items-center overflow-hidden rounded-3xl border border-white/10 bg-white/95 px-4 py-3 sm:h-32 sm:w-56 shadow-[0_18px_40px_rgba(0,0,0,0.18)]">
-                            <img src="./bitlinker-logo-1024.png" alt="BitLinker Logo" class="block h-40 sm:h-[11.5rem] w-auto max-w-full object-contain object-center mx-auto -translate-y-8 sm:-translate-y-9 translate-x-1 sm:translate-x-2">
-                        </div>
-                        <span class="rounded-full border border-emerald-400/20 bg-emerald-400/10 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.24em] text-emerald-200">Automação</span>
-                    </div>
-                    <h3 class="text-2xl font-display font-bold text-white">BitLinker</h3>
-                    <p class="mt-3 text-xs font-semibold uppercase tracking-[0.22em] text-emerald-200/90">
-                        Automação Inteligente Multimarketplace para Afiliados
-                    </p>
-                    <div class="mt-3">
-                        <span class="product-status product-status--emerald">Em desenvolvimento avançado</span>
-                    </div>
-                    <div class="mt-4 scan-grid">
-                        <div class="scan-item">
-                            <p class="scan-label">Problema</p>
-                            <p class="scan-text">Rotina manual e dispersão nas campanhas de afiliados.</p>
-                        </div>
-                        <div class="scan-item">
-                            <p class="scan-label">Como ajuda</p>
-                            <p class="scan-text">Automação de conteúdo, publicação e acompanhamento operacional.</p>
-                        </div>
-                        <div class="scan-item">
-                            <p class="scan-label">IA diferencial</p>
-                            <p class="scan-text">Copys, criativos e decisão assistida com foco em conversão.</p>
-                        </div>
-                    </div>
-                    <div class="mt-3 card-copy flex-1">
-                        <p>
-                        O BitLinker é uma ferramenta desktop de apoio à operação de afiliados, criada para organizar campanhas, padronizar links, apoiar a criação de conteúdo com IA e facilitar o acompanhamento de rotinas de publicação.
-                        </p>
-                        <p>
-                        Seu objetivo é reduzir trabalho manual, aumentar controle operacional e tornar a gestão de campanhas mais clara, rastreável e eficiente, sem prometer resultados financeiros automáticos.
-                        </p>
-                        <p>
-                        Desenvolvido como um sistema desktop de apoio operacional, o BitLinker prioriza organização, rastreabilidade e segurança ao rodar localmente na máquina do operador, com integração por APIs oficiais e fluxos técnicos claros.
-                        </p>
-                    </div>
-                    <div class="mt-5">
-                        <span class="inline-flex items-center justify-center rounded-full border border-white/12 bg-white/5 px-7 py-3.5 text-sm font-semibold text-slate-200">Em desenvolvimento avançado</span>
-                    </div>
-                    <div class="mt-6 rounded-2xl border border-white/8 bg-black/20 p-5">
-                        <p class="card-tech">
-                            <strong class="text-slate-200">Destaque Técnico:</strong> Python 3.12 Backend, FastAPI, SQLite Local (Single Source of Truth), Dockerized Environment para desenvolvimento, IA de Conteúdo com orquestração central de micro-motores.
-                        </p>
-                    </div>
-                </article>
-
-                <article id="clara" class="glass h-full rounded-[2rem] border border-white/10 p-7 sm:p-8 shadow-glow transition-transform duration-300 hover:-translate-y-1 flex flex-col">
-                    <div class="flex items-start justify-between gap-4 mb-6">
-                        <div class="grid h-28 w-44 place-items-center overflow-hidden rounded-3xl border border-white/10 bg-white/95 px-4 py-3 sm:h-32 sm:w-52 shadow-[0_18px_40px_rgba(0,0,0,0.18)]">
-                            <img src="./logo_clara.png" alt="Clara Logo" class="block h-22 sm:h-28 w-auto max-w-full object-contain object-center">
-                        </div>
-                        <span class="rounded-full border border-amber-400/20 bg-amber-400/10 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.24em] text-amber-200">Bem-estar</span>
-                    </div>
-                    <h3 class="text-2xl font-display font-bold text-white">Clara</h3>
-                    <p class="mt-3 text-xs font-semibold uppercase tracking-[0.22em] text-amber-200/90">
-                        Inteligência Artificial com Propósito Emocional
-                    </p>
-                    <div class="mt-3">
-                        <span class="product-status product-status--amber">Em fase de testes</span>
-                    </div>
-                    <div class="mt-4 scan-grid">
-                        <div class="scan-item">
-                            <p class="scan-label">Problema</p>
-                            <p class="scan-text">Solidão, ansiedade e necessidade de suporte diário.</p>
-                        </div>
-                        <div class="scan-item">
-                            <p class="scan-label">Como ajuda</p>
-                            <p class="scan-text">Escuta ativa, chec-ins leves e conversa empática.</p>
-                        </div>
-                        <div class="scan-item">
-                            <p class="scan-label">IA diferencial</p>
-                            <p class="scan-text">Prompts, cache contextual e governança ética de uso.</p>
-                        </div>
-                    </div>
-                    <div class="mt-3 card-copy">
-                        A Clara é uma solução de apoio emocional não clínico, criada para oferecer escuta orientada, chec-ins leves e conversas seguras com apoio de inteligência artificial.
-                    </div>
-                    <div class="mt-4 card-copy">
-                        Seu objetivo é estimular reflexão, organização emocional e busca por vínculos humanos reais, sempre com limites éticos claros e sem substituir psicólogos, terapeutas ou serviços de emergência.
-                    </div>
-                    <div class="mt-4 card-copy">
-                        A Clara não substitui acompanhamento psicológico, atendimento médico ou serviços de emergência.
-                    </div>
-                    <div class="mt-5">
-                        <span class="inline-flex items-center justify-center rounded-full border border-white/12 bg-white/5 px-7 py-3.5 text-sm font-semibold text-slate-200">Em fase de testes</span>
-                    </div>
-                    <div class="mt-6 rounded-2xl border border-white/8 bg-black/20 p-5">
-                        <p class="card-tech">
-                            <strong class="text-slate-200">Destaque Técnico:</strong> Flutter UI (Android/iOS/Web), FastAPI Backend, Amazon Bedrock, Prompt Caching Dinâmico e Clean Architecture com Domain-Driven Design (DDD).
-                        </p>
-                    </div>
-                </article>
-
-                <article id="nutrifacil" class="glass h-full rounded-[2rem] border border-white/10 p-7 sm:p-8 shadow-glow transition-transform duration-300 hover:-translate-y-1 flex flex-col">
-                    <div class="flex items-start justify-between gap-4 mb-6">
-                        <div class="grid h-28 w-44 place-items-center overflow-hidden rounded-3xl border border-white/10 bg-white/95 px-4 py-3 sm:h-32 sm:w-52 shadow-[0_18px_40px_rgba(0,0,0,0.18)]">
-                            <img src="./nutrifacil_fundo_transparente.png" alt="NutriFácil Logo" class="block h-24 sm:h-30 w-auto max-w-full object-contain object-center">
-                        </div>
-                        <span class="rounded-full border border-fuchsia-400/20 bg-fuchsia-400/10 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.24em] text-fuchsia-200">Nutrição</span>
-                    </div>
-                    <h3 class="text-2xl font-display font-bold text-white">NutriFácil</h3>
-                    <p class="mt-3 text-xs font-semibold uppercase tracking-[0.22em] text-fuchsia-200/90">
-                        Apoio Nutricional Prático e Inteligência Familiar
-                    </p>
-                    <div class="mt-3">
-                        <span class="product-status product-status--fuchsia">Em fase de testes</span>
-                    </div>
-                    <div class="mt-4 scan-grid">
-                        <div class="scan-item">
-                            <p class="scan-label">Problema</p>
-                            <p class="scan-text">Rótulos complexos e escolhas alimentares do dia a dia.</p>
-                        </div>
-                        <div class="scan-item">
-                            <p class="scan-label">Como ajuda</p>
-                            <p class="scan-text">Scanner nutricional e suporte prático à rotina familiar.</p>
-                        </div>
-                        <div class="scan-item">
-                            <p class="scan-label">IA diferencial</p>
-                            <p class="scan-text">Visão computacional e receitas guiadas pelos ingredientes.</p>
-                        </div>
-                    </div>
-                    <div class="mt-3 card-copy flex-1">
-                        <p>
-                        O NutriFácil transforma a relação das famílias com a alimentação diária, tornando as escolhas saudáveis mais claras e acompanháveis. Projetado como um assistente de bem-estar e educação alimentar, o aplicativo elimina parte da complexidade por trás das tabelas, receitas nutricionais e rótulos industriais.
-                        </p>
-                        <p>
-                        Ao alinhar tecnologia acessível e conscientização, ele atua como um guia de apoio para que pais, adultos e jovens cuidem melhor da rotina alimentar diária, estimulando escolhas mais informadas sem a imposição de dietas restritivas ou abordagens clínicas.
-                        </p>
-                        <p>
-                        Sua arquitetura apresenta diferenciais de mercado como o Scanner Nutricional Avançado e a Análise Visual por Câmera, além de um módulo de geração de receitas com base em imagens da geladeira ou despensa do usuário.
-                        </p>
-                        <p class="mt-3 text-sm leading-7 text-slate-300/85">
-                        O NutriFácil é uma ferramenta de educação e apoio alimentar. Não substitui nutricionistas, médicos ou orientação clínica individualizada.
-                        </p>
-                    </div>
-                    <div class="mt-5">
-                        <span class="inline-flex items-center justify-center rounded-full border border-white/12 bg-white/5 px-7 py-3.5 text-sm font-semibold text-slate-200">Em fase de testes</span>
-                    </div>
-                    <div class="mt-6 rounded-2xl border border-white/8 bg-black/20 p-5">
-                        <p class="card-tech">
-                            <strong class="text-slate-200">Destaque Técnico:</strong> Flutter Framework UI, Backend nativo com arquitetura modular, Modelos de Visão Computacional, Integração de Roteamento Dinâmico de LLM e Camada de Proteção de Infraestrutura AIUsageGuard.
-                        </p>
-                    </div>
-                </article>
-
-                <article id="mestre-do-reparo" class="glass h-full rounded-[2rem] border border-white/10 p-7 sm:p-8 shadow-glow transition-transform duration-300 hover:-translate-y-1 flex flex-col">
-                    <div class="flex items-start justify-between gap-4 mb-6">
-                        <div class="grid h-28 w-44 place-items-center overflow-hidden rounded-3xl border border-white/10 bg-white/95 px-3 py-3 sm:h-32 sm:w-52 shadow-[0_18px_40px_rgba(0,0,0,0.18)]">
-                            <img
-                                src="/mestre-do-reparo/logo-oficial.png"
-                                alt="Logo oficial do Mestre do Reparo"
-                                class="h-full w-full object-contain"
-                                loading="lazy"
-                            >
-                        </div>
-                        <span class="rounded-full border border-cyan-400/20 bg-cyan-400/10 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.24em] text-cyan-200">Manutenção</span>
-                    </div>
-                    <h3 class="text-2xl font-display font-bold text-white">Mestre do Reparo</h3>
-                    <p class="mt-3 text-xs font-semibold uppercase tracking-[0.22em] text-cyan-200/90">
-                        Transforme seu celular em um Engenheiro de Manutenção
-                    </p>
-                    <div class="mt-3">
-                        <span class="product-status" style="border-color: rgba(79, 140, 255, 0.22); background: rgba(79, 140, 255, 0.10); color: rgb(191 219 254);">Novo lançamento</span>
-                    </div>
-                    <div class="mt-4 scan-grid">
-                        <div class="scan-item">
-                            <p class="scan-label">Foco</p>
-                            <p class="scan-text">Diagnóstico guiado para decisões rápidas e menos desperdício.</p>
-                        </div>
-                        <div class="scan-item">
-                            <p class="scan-label">Uso real</p>
-                            <p class="scan-text">Fridges, faucets e manutenção cotidiana com apoio de IA.</p>
-                        </div>
-                        <div class="scan-item">
-                            <p class="scan-label">Funnel</p>
-                            <p class="scan-text">Landing, badges de loja e endpoint de savings prontos.</p>
-                        </div>
-                    </div>
-                    <div class="mt-3 card-copy flex-1">
-                        <p>
-                        O Mestre do Reparo transforma o celular em um engenheiro de manutenção com uma jornada rápida, clara e pronta para conversão mobile, usando o padrão visual corporativo da Inovexa.
-                        </p>
-                        <p>
-                        A proposta é simplificar a decisão do usuário com orientação prática, contador de impacto e links preparados para os futuros artefatos do app.
-                        </p>
-                    </div>
-                    <div class="mt-5 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
-                        <a href="/mestre-do-reparo/" class="inline-flex items-center justify-center rounded-full bg-inovexa-blue px-6 py-3 text-sm font-semibold text-white">Abrir Landing Page</a>
-                        <a href="/mestre-do-reparo/app-store/" class="inline-flex items-center justify-center rounded-full border border-white/12 bg-white/5 px-6 py-3 text-sm font-semibold text-slate-200">App Store</a>
-                    </div>
-                </article>
+            <div id="tecnologia" class="panel rounded-[2rem] p-7 sm:p-10">
+                <p class="eyebrow">Tecnologia</p>
+                <h2 class="mt-4 font-display text-3xl font-bold tracking-tight text-white sm:text-4xl">Tecnologia aplicada com responsabilidade.</h2>
+                <ul class="mt-7 space-y-5 text-sm leading-7 text-slate-300 sm:text-base">
+                    <li class="flex gap-3"><span class="mt-2 h-2 w-2 shrink-0 rounded-full bg-inovexa-blue"></span><span><strong class="text-white">Inteligência artificial aplicada:</strong> usada quando ajuda a tornar o produto mais útil e simples de usar.</span></li>
+                    <li class="flex gap-3"><span class="mt-2 h-2 w-2 shrink-0 rounded-full bg-inovexa-cyan"></span><span><strong class="text-white">Clareza e facilidade de uso:</strong> experiências pensadas para orientar as pessoas sem complicar tarefas do dia a dia.</span></li>
+                    <li class="flex gap-3"><span class="mt-2 h-2 w-2 shrink-0 rounded-full bg-inovexa-green"></span><span><strong class="text-white">Desenvolvimento responsável:</strong> produtos criados com atenção à segurança, à privacidade e aos limites de cada proposta.</span></li>
+                    <li class="flex gap-3"><span class="mt-2 h-2 w-2 shrink-0 rounded-full bg-inovexa-amber"></span><span><strong class="text-white">Necessidades reais:</strong> cada produto é desenvolvido para ajudar em uma situação específica.</span></li>
+                </ul>
             </div>
         </section>
 
-        <footer class="border-t border-white/10 bg-slate-950/25 py-8 backdrop-blur-sm">
-            <div class="max-w-7xl mx-auto px-6 sm:px-8 lg:px-10 footer-trust text-center">
-                <div>
-                    <p class="text-lg font-display font-bold text-white">Inovexa Software</p>
-                    <p class="mt-2 text-sm sm:text-base text-slate-100">Contato: <a href="mailto:contato@inovexa.software" class="underline decoration-white/50 underline-offset-4 transition-colors hover:text-white hover:decoration-white">contato@inovexa.software</a></p>
-                </div>
-                <div class="footer-links mt-4 flex flex-col items-center gap-3 sm:flex-row sm:justify-center sm:gap-6">
-                    <a href="https://www.linkedin.com/company/inovexa-software/" target="_blank" class="text-sm text-slate-100 underline decoration-white/50 underline-offset-4 transition-colors hover:text-white hover:decoration-white">LinkedIn Corporativo</a>
-                    <a href="https://github.com/inovexa-software/arquitetura-institucional" target="_blank" class="text-sm text-slate-100 underline decoration-white/50 underline-offset-4 transition-colors hover:text-white hover:decoration-white">Engenharia Inovexa (GitHub)</a>
-                </div>
-                <div class="space-y-3 mt-4">
-                    <p class="text-sm text-slate-100">© 2026 Inovexa Software.</p>
-                </div>
+        <section id="produtos" class="mx-auto max-w-7xl px-5 pb-16 sm:px-8 lg:px-10 lg:pb-24">
+            <div class="mb-10 max-w-3xl"><p class="eyebrow">Produtos</p><h2 class="mt-4 font-display text-3xl font-bold tracking-tight text-white sm:text-5xl">Produtos Inovexa</h2><p class="mt-4 text-base leading-8 text-slate-400">Cinco produtos digitais, cada um criado para atender uma necessidade específica.</p></div>
+            <div class="grid gap-5 lg:grid-cols-2">
+                <article id="produto-antibet" class="product-card panel rounded-[2rem] p-6 sm:p-8">
+                    <div class="product-logo-surface"><img src="/antibet-app/assets/assets/brand/logo-antibet_transparente.png" alt="Logo oficial do AntiBet"></div>
+                    <div class="mt-6 flex items-start justify-between gap-4"><div><p class="eyebrow text-inovexa-green">Prevenção e apoio</p><h3 class="mt-2 font-display text-2xl font-bold text-white">AntiBet</h3></div></div>
+                    <p class="mt-4 font-semibold text-emerald-200">Apoio para resistir ao impulso de apostar</p>
+                    <dl class="info-grid mt-5"><div class="info-item"><dt>Problema</dt><dd>Impulsos e acesso recorrente a apostas.</dd></div><div class="info-item"><dt>Como ajuda</dt><dd>Cria uma pausa antes do acesso e oferece recursos de apoio.</dd></div><div class="info-item"><dt>Objetivo</dt><dd>Apoiar decisões mais conscientes.</dd></div></dl>
+                    <div class="summary mt-5 space-y-3 text-sm leading-7 text-slate-300"><p>O AntiBet ajuda você a criar uma pausa de segurança antes de acessar sites, apps ou conteúdos de apostas.</p><p>O AntiBet é uma ferramenta de apoio e prevenção. Não substitui profissionais de saúde.</p></div>
+                    <div class="mt-6 rounded-2xl border border-white/10 bg-black/20 p-4 text-sm leading-6 text-slate-300"><strong class="text-white">Como o produto ajuda:</strong> cria uma pausa de segurança antes do acesso a apostas, oferece possibilidade de bloqueios de sites e aplicativos e recursos de apoio para decisões mais conscientes.</div>
+                </article>
+
+                <article id="produto-bitlinker" class="product-card panel rounded-[2rem] p-6 sm:p-8">
+                    <div class="product-logo-surface"><img src="./bitlinker-logo-1024.png" alt="Logo oficial do BitLinker"></div>
+                    <div class="mt-6 flex items-start justify-between gap-4"><div><p class="eyebrow text-inovexa-green">Automação</p><h3 class="mt-2 font-display text-2xl font-bold text-white">BitLinker</h3></div><span class="status border-emerald-300/25 bg-emerald-300/10 text-emerald-200">Em testes</span></div>
+                    <p class="mt-4 font-semibold text-emerald-200">Automação Inteligente Multimarketplace para Afiliados</p>
+                    <p class="mt-4 font-semibold text-emerald-200">Organização de produtos, links e textos de divulgação</p>
+                    <dl class="info-grid mt-5"><div class="info-item"><dt>Problema</dt><dd>Rotina manual e informações dispersas.</dd></div><div class="info-item"><dt>Como ajuda</dt><dd>Organiza produtos, links e conteúdo de divulgação.</dd></div><div class="info-item"><dt>Textos</dt><dd>Apoio à criação de materiais de divulgação.</dd></div></dl>
+                    <div class="summary mt-5 space-y-3 text-sm leading-7 text-slate-300"><p>O BitLinker é um sistema desktop criado para ajudar na organização de produtos, links de afiliados e conteúdo de divulgação. Ele reúne essas atividades em um ambiente local, facilitando o acompanhamento e a execução do trabalho diário.</p></div>
+                    <div class="mt-6 rounded-2xl border border-white/10 bg-black/20 p-4 text-sm leading-6 text-slate-300"><strong class="text-white">Como o produto ajuda:</strong> organiza informações e tarefas de divulgação em um só lugar, sem prometer resultados financeiros automáticos.</div>
+                </article>
+
+                <article id="produto-clara" class="product-card panel rounded-[2rem] p-6 sm:p-8">
+                    <div class="product-logo-surface"><img src="./logo_clara.png" alt="Logo oficial da Clara"></div>
+                    <div class="mt-6 flex items-start justify-between gap-4"><div><p class="eyebrow text-inovexa-amber">Bem-estar</p><h3 class="mt-2 font-display text-2xl font-bold text-white">Clara</h3></div><span class="status border-amber-300/25 bg-amber-300/10 text-amber-200">Em fase de testes</span></div>
+                    <p class="mt-4 font-semibold text-amber-200">Apoio emocional com inteligência artificial responsável</p>
+                    <dl class="info-grid mt-5"><div class="info-item"><dt>Problema</dt><dd>Momentos de solidão, sobrecarga e necessidade de organização emocional.</dd></div><div class="info-item"><dt>Como ajuda</dt><dd>Acolhimento, conversa e apoio na organização emocional.</dd></div><div class="info-item"><dt>Limite</dt><dd>Respeita os limites de uma assistente virtual.</dd></div></dl>
+                    <div class="summary mt-5 space-y-3 text-sm leading-7 text-slate-300"><p>A Clara é uma assistente virtual criada para oferecer acolhimento, conversa e apoio na organização emocional do dia a dia.</p><p>A Clara não substitui acompanhamento psicológico, médico ou atendimento de emergência.</p></div>
+                    <div class="mt-6 rounded-2xl border border-white/10 bg-black/20 p-4 text-sm leading-6 text-slate-300"><strong class="text-white">Como o produto ajuda:</strong> oferece um espaço de conversa e reflexão para momentos do dia a dia.</div>
+                </article>
+
+                <article id="produto-nutrifacil" class="product-card panel rounded-[2rem] p-6 sm:p-8">
+                    <div class="product-logo-surface"><img src="./nutrifacil_fundo_transparente.png" alt="Logo oficial do NutriFácil"></div>
+                    <div class="mt-6 flex items-start justify-between gap-4"><div><p class="eyebrow text-fuchsia-300">Nutrição</p><h3 class="mt-2 font-display text-2xl font-bold text-white">NutriFácil</h3></div><span class="status border-fuchsia-300/25 bg-fuchsia-300/10 text-fuchsia-200">Em fase de testes</span></div>
+                    <p class="mt-4 font-semibold text-fuchsia-200">Apoio alimentar claro para o dia a dia</p>
+                    <dl class="info-grid mt-5"><div class="info-item"><dt>Problema</dt><dd>Informações difíceis e escolhas alimentares diárias.</dd></div><div class="info-item"><dt>Como ajuda</dt><dd>Leitura e organização de informações sobre alimentos.</dd></div><div class="info-item"><dt>Recursos</dt><dd>Análise pela câmera e apresentação simplificada dos dados.</dd></div></dl>
+                    <div class="summary mt-5 space-y-3 text-sm leading-7 text-slate-300"><p>O NutriFácil ajuda o usuário a compreender informações sobre alimentos, organizar escolhas alimentares e aproveitar melhor os ingredientes disponíveis. A proposta inclui análise pela câmera, apresentação simplificada dos dados e sugestões de receitas com o que o usuário tem no momento.</p><p>O NutriFácil é uma ferramenta de educação e apoio alimentar. Não substitui nutricionistas, médicos ou orientação clínica individualizada.</p></div>
+                    <div class="mt-6 rounded-2xl border border-white/10 bg-black/20 p-4 text-sm leading-6 text-slate-300"><strong class="text-white">Como o produto ajuda:</strong> oferece leitura de informações nutricionais, análise de alimentos pela câmera e sugere receitas com os ingredientes disponíveis no momento.</div>
+                </article>
+
+                <article id="produto-mestre-do-reparo" class="product-card panel rounded-[2rem] p-6 sm:p-8 lg:col-span-2">
+                    <div class="grid gap-6 lg:grid-cols-[.34fr_1fr] lg:items-start"><div class="product-logo-surface mestre-surface"><img src="/mestre-do-reparo/logo-oficial.png" alt="Logo oficial do Mestre do Reparo"></div><div><div class="flex flex-wrap items-start justify-between gap-4"><div><p class="eyebrow text-inovexa-cyan">Manutenção</p><h3 class="mt-2 font-display text-2xl font-bold text-white">Mestre do Reparo</h3></div><span class="status border-cyan-300/25 bg-cyan-300/10 text-cyan-200">Em preparação para lançamento</span></div><p class="mt-4 font-semibold text-cyan-200">Orientação visual para pequenos reparos do dia a dia.</p><dl class="info-grid mt-5"><div class="info-item"><dt>Foco</dt><dd>Diagnóstico guiado e instruções passo a passo.</dd></div><div class="info-item"><dt>Exemplos de uso</dt><dd>Geladeiras, torneiras e equipamentos domésticos.</dd></div><div class="info-item"><dt>Como ajuda</dt><dd>Oferece orientação de como resolver falhas ou defeitos e ajuda a localizar peças compatíveis.</dd></div></dl><div class="summary mt-5 space-y-3 text-sm leading-7 text-slate-300"><p>O Mestre do Reparo foi concebido para usar a câmera do celular e inteligência artificial na identificação de problemas em equipamentos e utensílios. A proposta é orientar o usuário passo a passo, consultar informações úteis e ajudar a localizar peças compatíveis.</p></div><div class="mt-6 flex flex-wrap gap-3"><a href="/mestre-do-reparo/" class="focus-ring inline-flex min-h-11 items-center justify-center rounded-full bg-inovexa-blue px-5 py-2.5 text-sm font-bold text-white hover:bg-blue-500">Conheça o projeto</a><a href="/mestre-do-reparo/app-store/" class="focus-ring inline-flex min-h-11 items-center justify-center rounded-full border border-white/15 bg-white/5 px-5 py-2.5 text-sm font-bold text-slate-200 hover:bg-white/10">App Store</a></div></div></div>
+                </article>
             </div>
-        </footer>
+        </section>
     </main>
+
+    <footer id="contato" class="border-t border-white/10 bg-black/20">
+        <div class="mx-auto grid max-w-7xl gap-6 px-5 py-10 sm:px-8 lg:grid-cols-[1fr_auto] lg:items-center lg:px-10">
+            <div><p class="font-display text-lg font-bold text-white">Inovexa Software</p><p class="mt-2 text-sm text-slate-300">Contato: <a href="mailto:contato@inovexa.software" class="focus-ring underline underline-offset-4 hover:text-white">contato@inovexa.software</a></p><p class="mt-3 text-xs text-slate-500">© 2026 Inovexa Software.</p></div>
+            <nav class="flex flex-wrap gap-x-6 gap-y-3 text-sm text-slate-300" aria-label="Links institucionais"><a href="https://www.linkedin.com/company/inovexa-software/" target="_blank" rel="noopener noreferrer" class="focus-ring underline underline-offset-4 hover:text-white">LinkedIn Corporativo</a><a href="https://github.com/inovexa-software/arquitetura-institucional" target="_blank" rel="noopener noreferrer" class="focus-ring underline underline-offset-4 hover:text-white">Engenharia Inovexa (GitHub)</a><a href="/politica-de-privacidade/" class="focus-ring underline underline-offset-4 hover:text-white">Política de Privacidade</a></nav>
+        </div>
+    </footer>
 </body>
 </html>
